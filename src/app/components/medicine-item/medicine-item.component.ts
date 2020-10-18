@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./medicine-item.component.scss']
 })
 export class MedicineItemComponent implements OnInit {
+
+  @Input() id: number;
+  @Input() title: string;
+  @Input() text: string;
+  @Input() image: string;
 
   constructor() { }
 
