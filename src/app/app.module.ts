@@ -11,6 +11,8 @@ import { SignupComponent } from './components/signup/signup.component';
 import { MedicineComponent } from './components/medicine/medicine.component';
 import { MedicineItemComponent } from './components/medicine-item/medicine-item.component';
 import { MedicineItemDetailsComponent } from './components/medicine-item-details/medicine-item-details.component';
+import { PrescriptionComponent } from './components/prescription/prescription.component';
+import { EquipmentComponent } from './components/equipment/equipment.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { MedicineItemDetailsComponent } from './components/medicine-item-details
     SignupComponent,
     MedicineComponent,
     MedicineItemComponent,
-    MedicineItemDetailsComponent
+    MedicineItemDetailsComponent,
+    PrescriptionComponent,
+    EquipmentComponent
   ],
   imports: [
     BrowserModule,

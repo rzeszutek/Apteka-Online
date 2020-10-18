@@ -7,6 +7,8 @@ import {MedicineComponent} from './components/medicine/medicine.component';
 import {MedicineItemComponent} from './components/medicine-item/medicine-item.component';
 import {MedicineItemDetailsComponent} from './components/medicine-item-details/medicine-item-details.component';
 import {FooterComponent} from './components/footer/footer.component';
+import {PrescriptionComponent} from './components/prescription/prescription.component';
+import {EquipmentComponent} from './components/equipment/equipment.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home'},
@@ -16,6 +18,8 @@ const routes: Routes = [
   { path: 'medicine', component: MedicineComponent},
   { path: 'medicine-item', component: MedicineItemComponent},
   { path: 'medicine-item-details', component: MedicineItemDetailsComponent},
+  { path: 'prescription', component: PrescriptionComponent},
+  { path: 'equipment', component: EquipmentComponent},
   { path: 'footer', component: FooterComponent},
 ];
 

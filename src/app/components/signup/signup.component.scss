@@ -1,0 +1,36 @@
+.home {
+  position: relative;
+}
+
+.form-group {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  height: 80%;
+  width: 30%;
+  border-style: solid;
+  border-color: green;
+  border-radius: 10px;
+  border-width: 3px;
+  padding: 2%;
+}
+
+i {
+  display: flex;
+  justify-content: center;
+  color: green;
+}
+
+h1 {
+  text-align: center;
+}
+
+.form-group label, input {
+  margin-top: 2%;
+}
+
+.btn-success {
+  width: 100%;
+  margin-top: 5%;
+}
