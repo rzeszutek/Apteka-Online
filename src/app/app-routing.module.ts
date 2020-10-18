@@ -9,7 +9,8 @@ import {MedicineItemDetailsComponent} from './components/medicine-item-details/m
 import {FooterComponent} from './components/footer/footer.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent},
+  { path: '', pathMatch: 'full', redirectTo: 'home'},
+  { path: 'home', component: HomeComponent},
   { path: 'login', component: LoginComponent},
   { path: 'signup', component: SignupComponent},
   { path: 'medicine', component: MedicineComponent},
