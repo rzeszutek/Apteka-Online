@@ -11,28 +11,19 @@ ul {
   padding-left: 5%;
 }
 
-li {
+li a {
+  position: relative;
+}
+
+li a {
   margin-left: 20px;
   font-size: 105%;
 }
 
-.active-route {
+li a.active-route {
   border-bottom: 2px solid cornflowerblue;
 }
 
-//
-//li a {
-//  text-decoration: none;
-//  color: black;
-//  border-bottom: 3px solid transparent;
-//  padding: 14px;
-//}
-//
-//li a:hover {
-//  border-bottom: 3px solid green;
-//}
-//
-//li a.active {
-//  border-bottom: 3px solid green;
-//}
-
+li a:hover {
+  border-bottom: 2px solid cornflowerblue;
+}
