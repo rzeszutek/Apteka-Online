@@ -2,25 +2,36 @@
   position: relative;
 }
 
+img {
+  opacity: 70%;
+}
+
 .h1 {
   position: absolute;
-  top: 30%;
-  left: 50%;
+  top: 15%;
+  left: 75%;
   transform: translate(-50%, 0);
   font-size: 400%;
 }
 
-.btn-success {
+p {
   position: absolute;
-  top: 50%;
-  left: 45%;
+  top: 25%;
+  left: 76%;
   transform: translate(-50%, 0);
 }
 
-.btn-outline-success {
+.btn-primary {
   position: absolute;
-  top: 50%;
-  left: 55%;
+  top: 55%;
+  left: 70%;
+  transform: translate(-50%, 0);
+}
+
+.btn-outline-primary {
+  position: absolute;
+  top: 55%;
+  left: 80%;
   transform: translate(-50%, 0);
 }
 
