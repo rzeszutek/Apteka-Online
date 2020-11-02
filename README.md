@@ -1,3 +1,8 @@
+# Stan obecny:
+
+- frontend - formy do zmiany (kolorystyka, background), refactor kodu ze strony głównej (robione na absolutach)
+- backend - połączenie z bazą, nieaktualny build, z którego korzysta serwer
+___________________________________________________________________________________________________________________________________________________________________________________
 # Client
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.7.
