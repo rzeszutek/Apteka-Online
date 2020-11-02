@@ -1,8 +1,26 @@
-<nav class="header">
-  <ul class="nav">
-    <li class="nav-item"><a class="h5" [routerLink]="['/home']" routerLinkActive="active">Home</a></li>
-    <li class="nav-item"><a class="h5" [routerLink]="['/medicine']" routerLinkActive="active">Leki</a></li>
-    <li class="nav-item"><a class="h5" [routerLink]="['/prescription']" routerLinkActive="active">E-recepta</a></li>
-    <li class="nav-item"><a class="h5" [routerLink]="['/equipment']" routerLinkActive="active">Sprzęt</a></li>
-  </ul>
+<!--<nav class="navbar navbar-light">-->
+<!--  <ul class="nav">-->
+<!--    <li class="nav-item"><a class="h5 text-uppercase" [routerLink]="['/home']" routerLinkActive="active">Home</a></li>-->
+<!--    <li class="nav-item"><a class="h5 text-uppercase" [routerLink]="['/medicine']" routerLinkActive="active">Leki</a></li>-->
+<!--    <li class="nav-item"><a class="h5 text-uppercase" [routerLink]="['/prescription']" routerLinkActive="active">E-recepta</a></li>-->
+<!--    <li class="nav-item"><a class="h5 text-uppercase" [routerLink]="['/equipment']" routerLinkActive="active">Sprzęt</a></li>-->
+<!--  </ul>-->
+<!--</nav>-->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <i class="fa fa-heartbeat fa-3x" aria-hidden="true" style="padding-left: 1%;"></i>
+    <ul class="navbar-nav" routerLinkActive="active">
+      <li class="nav-item">
+        <a class="nav-link" href="home" routerLink="home" routerLinkActive="active-route">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="medicine" routerLink="medicine" routerLinkActive="active-route">Leki</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="prescription" routerLink="prescription" routerLinkActive="active-route">E-Recepty</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="equipment" routerLink="equipment" routerLinkActive="active-route">Sprzęt</a>
+      </li>
+    </ul>
 </nav>

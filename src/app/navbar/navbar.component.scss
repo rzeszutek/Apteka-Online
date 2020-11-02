@@ -1,37 +1,38 @@
-.header {
+.navbar {
   position: sticky;
   width: 100%;
-  height: 60px;
-  background: white;
   top: 0px;
   z-index: 999;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 ul {
-  font-size: 110%;
-  display: flex;
-  justify-content: space-between;
   list-style-type: none;
-  margin-left: 30%;
-  margin-right: 30%;
-  padding-top: 12px;
-  height: 100%;
+  padding-left: 5%;
 }
 
-li a {
-  text-decoration: none;
-  color: black;
-  font-family: Arial;
-  border-bottom: 3px solid transparent;
-  padding: 24px;
+li {
+  margin-left: 20px;
+  font-size: 105%;
 }
 
-li a:hover {
-  border-bottom: 3px solid green;
+.active-route {
+  border-bottom: 2px solid cornflowerblue;
 }
 
-li a.active {
-  border-bottom: 3px solid green;
-}
+//
+//li a {
+//  text-decoration: none;
+//  color: black;
+//  border-bottom: 3px solid transparent;
+//  padding: 14px;
+//}
+//
+//li a:hover {
+//  border-bottom: 3px solid green;
+//}
+//
+//li a.active {
+//  border-bottom: 3px solid green;
+//}
 
