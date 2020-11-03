@@ -2,24 +2,33 @@
   position: relative;
 }
 
-.form-group {
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, 0);
-  height: 55%;
-  width: 30%;
-  border-style: solid;
-  border-color: green;
-  border-radius: 10px;
-  border-width: 3px;
-  padding: 2%;
+img {
+  opacity: 35%;
 }
 
-i {
+.form-group {
+  position: absolute;
+  background: #f1f1f1;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  height: 56%;
+  width: 30%;
+  border-style: solid;
+  border-color: steelblue;
+  border-radius: 10px;
+  border-width: 3px;
+  padding: 1%;
+}
+
+.fa.fa-arrow-left {
+  color: steelblue;
+}
+
+.fa.fa-user {
   display: flex;
   justify-content: center;
-  color: green;
+  color: steelblue;
 }
 
 h1 {
@@ -30,12 +39,12 @@ h1 {
   margin-top: 2%;
 }
 
-.btn-success {
+.btn-primary {
   width: 100%;
   margin-top: 5%;
 }
 
 .forgot {
   text-align: center;
-  padding: 4%;
+  padding: 2%;
 }

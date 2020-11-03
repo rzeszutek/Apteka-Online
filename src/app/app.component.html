@@ -7,5 +7,6 @@
 <div>
   <router-outlet></router-outlet>
 </div>
-<footer></footer>
-
+<div *ngIf="_router.url != '/prescription'">
+  <footer></footer>
+</div>
