@@ -1,10 +1,9 @@
-const express = require('express');
-const router = express.Router();
+'use strict';
 
-router.get('/api', (req, res) => {
-  res.status(200).send({
-    success: "true"
-  })
-});
+import endpoint from './endpoints';
 
-module.exports = router;
+const routes = (router, config) => {
+  endpoint(router);
+};
+
+export default routes;
