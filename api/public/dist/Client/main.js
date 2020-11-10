@@ -12,6 +12,42 @@ module.exports = __webpack_require__(/*! D:\Rafał\Dokumenty\Praca Dyplomowa\Apt
 
 /***/ }),
 
+/***/ "1y+R":
+/*!***********************************************!*\
+  !*** ./src/app/services/data/data.service.ts ***!
+  \***********************************************/
+/*! exports provided: DataService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DataService", function() { return DataService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "IheW");
+
+
+
+class DataService {
+    constructor(http) {
+        this.http = http;
+        this.url = 'https://localhost:3000';
+    }
+    getMedicines() {
+        return this.http.get(this.url + '/api/medicine');
+    }
+    getById(id) {
+        return this.http.get(this.url + '/api/medicine/' + id);
+    }
+}
+DataService.ɵfac = function DataService_Factory(t) { return new (t || DataService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"])); };
+DataService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: DataService, factory: DataService.ɵfac });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](DataService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
+    }], function () { return [{ type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }]; }, null); })();
+
+
+/***/ }),
+
 /***/ "5Ey6":
 /*!*******************************************************!*\
   !*** ./src/app/components/signup/signup.component.ts ***!
@@ -542,6 +578,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_medicine_item_details_medicine_item_details_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/medicine-item-details/medicine-item-details.component */ "hjhQ");
 /* harmony import */ var _components_prescription_prescription_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/prescription/prescription.component */ "6s89");
 /* harmony import */ var _components_equipment_equipment_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/equipment/equipment.component */ "qM3w");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/platform-browser/animations */ "R1ws");
+/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/material/card */ "Wp6s");
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/material/button */ "bTqV");
+
+
+
 
 
 
@@ -562,7 +604,10 @@ class AppModule {
 AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]] });
 AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({ factory: function AppModule_Factory(t) { return new (t || AppModule)(); }, providers: [], imports: [[
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
-            _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"]
+            _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"],
+            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_14__["BrowserAnimationsModule"],
+            _angular_material_card__WEBPACK_IMPORTED_MODULE_15__["MatCardModule"],
+            _angular_material_button__WEBPACK_IMPORTED_MODULE_16__["MatButtonModule"]
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
         _components_home_home_component__WEBPACK_IMPORTED_MODULE_4__["HomeComponent"],
@@ -575,7 +620,10 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
         _components_medicine_item_details_medicine_item_details_component__WEBPACK_IMPORTED_MODULE_11__["MedicineItemDetailsComponent"],
         _components_prescription_prescription_component__WEBPACK_IMPORTED_MODULE_12__["PrescriptionComponent"],
         _components_equipment_equipment_component__WEBPACK_IMPORTED_MODULE_13__["EquipmentComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
-        _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"]] }); })();
+        _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"],
+        _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_14__["BrowserAnimationsModule"],
+        _angular_material_card__WEBPACK_IMPORTED_MODULE_15__["MatCardModule"],
+        _angular_material_button__WEBPACK_IMPORTED_MODULE_16__["MatButtonModule"]] }); })();
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](AppModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
         args: [{
@@ -594,7 +642,10 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
                 ],
                 imports: [
                     _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
-                    _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"]
+                    _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"],
+                    _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_14__["BrowserAnimationsModule"],
+                    _angular_material_card__WEBPACK_IMPORTED_MODULE_15__["MatCardModule"],
+                    _angular_material_button__WEBPACK_IMPORTED_MODULE_16__["MatButtonModule"]
                 ],
                 providers: [],
                 bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
@@ -615,14 +666,37 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MedicineItemDetailsComponent", function() { return MedicineItemDetailsComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _services_data_data_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/data/data.service */ "1y+R");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "tyNb");
+
+
 
 
 class MedicineItemDetailsComponent {
-    constructor() { }
+    constructor(dataService, route) {
+        this.dataService = dataService;
+        this.route = route;
+    }
     ngOnInit() {
+        let id;
+        this.route.paramMap
+            .subscribe(params => {
+            id = params.get('id');
+        });
+        this.dataService.getMedicines().subscribe(res => {
+            this.items$ = res;
+            this.name = res['image'];
+            this.price = res['price'];
+            this.imageUrl = res['imageUrl'];
+            this.reimbursed = res['reimbursed'];
+            this.prescription = res['prescription'];
+            this.description = res['description'];
+            this.id = res['id'];
+            console.log(res);
+        });
     }
 }
-MedicineItemDetailsComponent.ɵfac = function MedicineItemDetailsComponent_Factory(t) { return new (t || MedicineItemDetailsComponent)(); };
+MedicineItemDetailsComponent.ɵfac = function MedicineItemDetailsComponent_Factory(t) { return new (t || MedicineItemDetailsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_data_data_service__WEBPACK_IMPORTED_MODULE_1__["DataService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"])); };
 MedicineItemDetailsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: MedicineItemDetailsComponent, selectors: [["medicine-item-details"]], decls: 2, vars: 0, template: function MedicineItemDetailsComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "medicine-item-details works!");
@@ -636,7 +710,7 @@ MedicineItemDetailsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__[
                 templateUrl: './medicine-item-details.component.html',
                 styleUrls: ['./medicine-item-details.component.scss']
             }]
-    }], function () { return []; }, null); })();
+    }], function () { return [{ type: _services_data_data_service__WEBPACK_IMPORTED_MODULE_1__["DataService"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] }]; }, null); })();
 
 
 /***/ }),

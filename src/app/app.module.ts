@@ -16,6 +16,9 @@ import { EquipmentComponent } from './components/equipment/equipment.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import {DataService} from "./services/data/data.service";
+import { HttpClientModule } from "@angular/common/http";
+import { TruncatePipe } from './pipes/truncate.pipe';
 
 @NgModule({
   declarations: [
@@ -29,16 +32,20 @@ import { MatButtonModule } from '@angular/material/button';
     MedicineItemComponent,
     MedicineItemDetailsComponent,
     PrescriptionComponent,
-    EquipmentComponent
+    EquipmentComponent,
+    TruncatePipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    DataService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,8 +1,16 @@
 <div class="card border-primary mb-3" style="max-width: 18rem;">
-  <div class="card-header">{{id}}</div>
   <img class="card-img-top" style="padding: 3%;" [src]="image">
   <div class="card-body text-primary">
-    <p class="card-title">{{title}}</p>
-    <p class="card-text">{{text}}</p>
+    <p class="card-title"><b>{{title}}</b></p>
+    <div class="description-container">
+      <p class="card-text">{{description}}</p>
+    </div>
+    <p class="card-text"><b>{{price}}</b></p>
+    <div class="buttons-container">
+      <button class="btn btn-primary">Czytaj więcej</button>
+      <button class="btn btn-outline-primary">-</button>
+      <output>{{count}}</output>
+      <button class="btn btn-outline-primary">+</button>
+    </div>
   </div>
 </div>
