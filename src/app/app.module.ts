@@ -13,6 +13,9 @@ import { MedicineItemComponent } from './components/medicine-item/medicine-item.
 import { MedicineItemDetailsComponent } from './components/medicine-item-details/medicine-item-details.component';
 import { PrescriptionComponent } from './components/prescription/prescription.component';
 import { EquipmentComponent } from './components/equipment/equipment.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { EquipmentComponent } from './components/equipment/equipment.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

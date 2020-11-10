@@ -8,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MedicineComponent implements OnInit {
 
-  const // @ts-ignore
   PRODUCTS = [
     {id: 1, name:'Ibuprom', price: 10.99, image: 'https://static2.aptekagemini.pl/assets/produkty/9028327/min6/nurofen-express-forte-400-mg-12-tabletek-15953706211.jpg'},
     {id: 2, name:'Rutinoscorbin', price: 4.99, image: 'https://static2.aptekagemini.pl/assets/produkty/0042739/min6/rutinoscorbin-25mg-100mg-150-tabletek-15925064581.jpg'},
@@ -20,6 +19,9 @@ export class MedicineComponent implements OnInit {
     {id: 8, name:'Ascorvita', price: 14.25, image: 'https://static2.aptekagemini.pl/assets/produkty/0003359/min6/ascorvita-witamina-c-additiva-1000mg-20-tabletek-musujacych-15925072431.jpg'},
     //{id: 9, name:'Essentiale Max', price: 15.50, image: 'https://static2.aptekagemini.pl/assets/produkty/0021424/min6/essentiale-max-600mg-30-kapsulek-15925077501.jpg'}
   ];
+
+
+
 
   constructor() { }
 
