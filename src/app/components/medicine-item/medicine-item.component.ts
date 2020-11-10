@@ -10,8 +10,11 @@ export class MedicineItemComponent implements OnInit {
 
   @Input() id: number;
   @Input() title: string;
-  @Input() text: string;
+  @Input() description: string;
   @Input() image: string;
+  @Input() price: string;
+
+  public count: number = 0;
 
   constructor() { }
 

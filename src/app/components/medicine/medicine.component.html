@@ -7,8 +7,8 @@
       </form>
     </div>
     <div class="row">
-      <div class="column" *ngFor="let item of PRODUCTS">
-        <medicine-item class="card" [id]="item.id" [title]="item.name" [text]="item.price" [image]="item.image">
+      <div class="column" *ngFor="let item of items$">
+        <medicine-item class="card" [title]="item.name" [description]="item.description | truncate:140" [price]="item.price + ' zł'" [image]="item.imageUrl">
         </medicine-item>
       </div>
     </div>
