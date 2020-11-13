@@ -16,7 +16,7 @@ import { EquipmentComponent } from './components/equipment/equipment.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import {DataService} from "./services/data/data.service";
+import { DataService } from "./services/data/data.service";
 import { HttpClientModule } from "@angular/common/http";
 import { TruncatePipe } from './pipes/truncate.pipe';
 

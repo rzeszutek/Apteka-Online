@@ -30,7 +30,7 @@ __webpack_require__.r(__webpack_exports__);
 class DataService {
     constructor(http) {
         this.http = http;
-        this.url = 'https://localhost:3000';
+        this.url = 'http://localhost:3000';
     }
     getMedicines() {
         return this.http.get(this.url + '/api/medicine');
@@ -368,36 +368,60 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class MedicineItemComponent {
-    constructor() { }
+    constructor() {
+        this.count = 0;
+    }
     ngOnInit() {
     }
 }
 MedicineItemComponent.ɵfac = function MedicineItemComponent_Factory(t) { return new (t || MedicineItemComponent)(); };
-MedicineItemComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: MedicineItemComponent, selectors: [["medicine-item"]], inputs: { id: "id", title: "title", text: "text", image: "image" }, decls: 9, vars: 4, consts: [[1, "card", "border-primary", "mb-3", 2, "max-width", "18rem"], [1, "card-header"], [1, "card-img-top", 2, "padding", "3%", 3, "src"], [1, "card-body", "text-primary"], [1, "card-title"], [1, "card-text"]], template: function MedicineItemComponent_Template(rf, ctx) { if (rf & 1) {
+MedicineItemComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: MedicineItemComponent, selectors: [["medicine-item"]], inputs: { id: "id", title: "title", description: "description", image: "image", price: "price" }, decls: 21, vars: 5, consts: [[1, "card", "border-primary", "mb-3", 2, "max-width", "18rem"], [1, "card-img-top", 2, "padding", "3%", 3, "src"], [1, "card-body", "text-primary"], [1, "card-title"], [1, "description-container"], [1, "card-text"], [1, "buttons-container"], [1, "btn", "btn-primary"], [1, "btn", "btn-outline-primary"]], template: function MedicineItemComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "img", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "p", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "b");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "img", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "p", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "div", 4);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "p", 5);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "p", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "b");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "div", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "button", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14, "Czytaj wi\u0119cej");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "button", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](16, "-");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](17, "output");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](18);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](19, "button", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](20, "+");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.id);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("src", ctx.image, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.title);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.text);
-    } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvbWVkaWNpbmUtaXRlbS9tZWRpY2luZS1pdGVtLmNvbXBvbmVudC5zY3NzIn0= */"] });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.description);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.price);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.count);
+    } }, styles: [".card[_ngcontent-%COMP%] {\n  height: 600px;\n}\n\n.description-container[_ngcontent-%COMP%] {\n  height: 150px;\n}\n\n.buttons-container[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n}\n\n.btn.btn-outline-primary[_ngcontent-%COMP%] {\n  width: 40px;\n}\n\noutput[_ngcontent-%COMP%] {\n  margin-top: 2%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9tZWRpY2luZS1pdGVtL21lZGljaW5lLWl0ZW0uY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxhQUFBO0FBQ0Y7O0FBRUE7RUFDRSxhQUFBO0FBQ0Y7O0FBRUE7RUFDRSxhQUFBO0VBQ0EsOEJBQUE7QUFDRjs7QUFFQTtFQUNFLFdBQUE7QUFDRjs7QUFFQTtFQUNFLGNBQUE7QUFDRiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvbWVkaWNpbmUtaXRlbS9tZWRpY2luZS1pdGVtLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNhcmQge1xyXG4gIGhlaWdodDogNjAwcHg7XHJcbn1cclxuXHJcbi5kZXNjcmlwdGlvbi1jb250YWluZXIge1xyXG4gIGhlaWdodDogMTUwcHg7XHJcbn1cclxuXHJcbi5idXR0b25zLWNvbnRhaW5lciB7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBqdXN0aWZ5LWNvbnRlbnQ6IHNwYWNlLWJldHdlZW47XHJcbn1cclxuXHJcbi5idG4uYnRuLW91dGxpbmUtcHJpbWFyeSB7XHJcbiAgd2lkdGg6IDQwcHg7XHJcbn1cclxuXHJcbm91dHB1dCB7XHJcbiAgbWFyZ2luLXRvcDogMiU7XHJcbn1cclxuIl19 */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MedicineItemComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -410,9 +434,11 @@ MedicineItemComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵde
             type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
         }], title: [{
             type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
-        }], text: [{
+        }], description: [{
             type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
         }], image: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+        }], price: [{
             type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
         }] }); })();
 
@@ -581,6 +607,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/platform-browser/animations */ "R1ws");
 /* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/material/card */ "Wp6s");
 /* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/material/button */ "bTqV");
+/* harmony import */ var _services_data_data_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./services/data/data.service */ "1y+R");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @angular/common/http */ "IheW");
+/* harmony import */ var _pipes_truncate_pipe__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./pipes/truncate.pipe */ "h/Hl");
+
+
+
 
 
 
@@ -602,12 +634,15 @@ __webpack_require__.r(__webpack_exports__);
 class AppModule {
 }
 AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]] });
-AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({ factory: function AppModule_Factory(t) { return new (t || AppModule)(); }, providers: [], imports: [[
+AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector"]({ factory: function AppModule_Factory(t) { return new (t || AppModule)(); }, providers: [
+        _services_data_data_service__WEBPACK_IMPORTED_MODULE_17__["DataService"],
+    ], imports: [[
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
             _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"],
             _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_14__["BrowserAnimationsModule"],
             _angular_material_card__WEBPACK_IMPORTED_MODULE_15__["MatCardModule"],
-            _angular_material_button__WEBPACK_IMPORTED_MODULE_16__["MatButtonModule"]
+            _angular_material_button__WEBPACK_IMPORTED_MODULE_16__["MatButtonModule"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_18__["HttpClientModule"],
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
         _components_home_home_component__WEBPACK_IMPORTED_MODULE_4__["HomeComponent"],
@@ -619,11 +654,13 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
         _components_medicine_item_medicine_item_component__WEBPACK_IMPORTED_MODULE_10__["MedicineItemComponent"],
         _components_medicine_item_details_medicine_item_details_component__WEBPACK_IMPORTED_MODULE_11__["MedicineItemDetailsComponent"],
         _components_prescription_prescription_component__WEBPACK_IMPORTED_MODULE_12__["PrescriptionComponent"],
-        _components_equipment_equipment_component__WEBPACK_IMPORTED_MODULE_13__["EquipmentComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
+        _components_equipment_equipment_component__WEBPACK_IMPORTED_MODULE_13__["EquipmentComponent"],
+        _pipes_truncate_pipe__WEBPACK_IMPORTED_MODULE_19__["TruncatePipe"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
         _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"],
         _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_14__["BrowserAnimationsModule"],
         _angular_material_card__WEBPACK_IMPORTED_MODULE_15__["MatCardModule"],
-        _angular_material_button__WEBPACK_IMPORTED_MODULE_16__["MatButtonModule"]] }); })();
+        _angular_material_button__WEBPACK_IMPORTED_MODULE_16__["MatButtonModule"],
+        _angular_common_http__WEBPACK_IMPORTED_MODULE_18__["HttpClientModule"]] }); })();
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](AppModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
         args: [{
@@ -638,17 +675,54 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
                     _components_medicine_item_medicine_item_component__WEBPACK_IMPORTED_MODULE_10__["MedicineItemComponent"],
                     _components_medicine_item_details_medicine_item_details_component__WEBPACK_IMPORTED_MODULE_11__["MedicineItemDetailsComponent"],
                     _components_prescription_prescription_component__WEBPACK_IMPORTED_MODULE_12__["PrescriptionComponent"],
-                    _components_equipment_equipment_component__WEBPACK_IMPORTED_MODULE_13__["EquipmentComponent"]
+                    _components_equipment_equipment_component__WEBPACK_IMPORTED_MODULE_13__["EquipmentComponent"],
+                    _pipes_truncate_pipe__WEBPACK_IMPORTED_MODULE_19__["TruncatePipe"]
                 ],
                 imports: [
                     _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
                     _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"],
                     _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_14__["BrowserAnimationsModule"],
                     _angular_material_card__WEBPACK_IMPORTED_MODULE_15__["MatCardModule"],
-                    _angular_material_button__WEBPACK_IMPORTED_MODULE_16__["MatButtonModule"]
+                    _angular_material_button__WEBPACK_IMPORTED_MODULE_16__["MatButtonModule"],
+                    _angular_common_http__WEBPACK_IMPORTED_MODULE_18__["HttpClientModule"],
                 ],
-                providers: [],
+                providers: [
+                    _services_data_data_service__WEBPACK_IMPORTED_MODULE_17__["DataService"],
+                ],
                 bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
+            }]
+    }], null, null); })();
+
+
+/***/ }),
+
+/***/ "h/Hl":
+/*!****************************************!*\
+  !*** ./src/app/pipes/truncate.pipe.ts ***!
+  \****************************************/
+/*! exports provided: TruncatePipe */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TruncatePipe", function() { return TruncatePipe; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+
+class TruncatePipe {
+    transform(value, limit = 25, completeWords = true, ellipsis = '...') {
+        if (completeWords) {
+            limit = value.substr(0, limit).lastIndexOf(' ');
+        }
+        return value.length > limit ? value.substr(0, limit) + ellipsis : value;
+    }
+}
+TruncatePipe.ɵfac = function TruncatePipe_Factory(t) { return new (t || TruncatePipe)(); };
+TruncatePipe.ɵpipe = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefinePipe"]({ name: "truncate", type: TruncatePipe, pure: true });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](TruncatePipe, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Pipe"],
+        args: [{
+                name: 'truncate'
             }]
     }], null, null); })();
 
@@ -683,7 +757,7 @@ class MedicineItemDetailsComponent {
             .subscribe(params => {
             id = params.get('id');
         });
-        this.dataService.getMedicines().subscribe(res => {
+        this.dataService.getById(id).subscribe(res => {
             this.items$ = res;
             this.name = res['image'];
             this.price = res['price'];
@@ -697,11 +771,7 @@ class MedicineItemDetailsComponent {
     }
 }
 MedicineItemDetailsComponent.ɵfac = function MedicineItemDetailsComponent_Factory(t) { return new (t || MedicineItemDetailsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_data_data_service__WEBPACK_IMPORTED_MODULE_1__["DataService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"])); };
-MedicineItemDetailsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: MedicineItemDetailsComponent, selectors: [["medicine-item-details"]], decls: 2, vars: 0, template: function MedicineItemDetailsComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "medicine-item-details works!");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvbWVkaWNpbmUtaXRlbS1kZXRhaWxzL21lZGljaW5lLWl0ZW0tZGV0YWlscy5jb21wb25lbnQuc2NzcyJ9 */"] });
+MedicineItemDetailsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: MedicineItemDetailsComponent, selectors: [["medicine-item-details"]], decls: 0, vars: 0, template: function MedicineItemDetailsComponent_Template(rf, ctx) { }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvbWVkaWNpbmUtaXRlbS1kZXRhaWxzL21lZGljaW5lLWl0ZW0tZGV0YWlscy5jb21wb25lbnQuc2NzcyJ9 */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MedicineItemDetailsComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -823,8 +893,12 @@ EquipmentComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefin
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MedicineComponent", function() { return MedicineComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "ofXK");
-/* harmony import */ var _medicine_item_medicine_item_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../medicine-item/medicine-item.component */ "M6pi");
+/* harmony import */ var _services_data_data_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/data/data.service */ "1y+R");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _medicine_item_medicine_item_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../medicine-item/medicine-item.component */ "M6pi");
+/* harmony import */ var _pipes_truncate_pipe__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../pipes/truncate.pipe */ "h/Hl");
+
+
 
 
 
@@ -832,30 +906,30 @@ __webpack_require__.r(__webpack_exports__);
 function MedicineComponent_div_8_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 7);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "medicine-item", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](2, "truncate");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const item_r1 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("id", item_r1.id)("title", item_r1.name)("text", item_r1.price)("image", item_r1.image);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("title", item_r1.name)("description", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind2"](2, 4, item_r1.description, 140))("price", item_r1.price + " z\u0142")("image", item_r1.imageUrl);
 } }
 class MedicineComponent {
-    constructor() {
-        this.PRODUCTS = [
-            { id: 1, name: 'Ibuprom', price: 10.99, image: 'https://static2.aptekagemini.pl/assets/produkty/9028327/min6/nurofen-express-forte-400-mg-12-tabletek-15953706211.jpg' },
-            { id: 2, name: 'Rutinoscorbin', price: 4.99, image: 'https://static2.aptekagemini.pl/assets/produkty/0042739/min6/rutinoscorbin-25mg-100mg-150-tabletek-15925064581.jpg' },
-            { id: 3, name: 'Mucosolvan', price: 8.99, image: 'https://static2.aptekagemini.pl/assets/produkty/0016602/min6/mucosolvan-mini-15mg-5ml-syrop-dla-dzieci-powyzej-1-roku-zycia-100ml-15925064131.jpg' },
-            { id: 4, name: 'Nurofen Forte', price: 12.55, image: 'https://static2.aptekagemini.pl/assets/produkty/0001519/min6/nurofen-forte-400mg-48-tabletek-15925111281.jpg' },
-            { id: 5, name: 'Magne-B6', price: 13.99, image: 'https://static2.aptekagemini.pl/assets/produkty/0015471/min6/magne-b6-max-50-tabletek-15925066381.jpg' },
-            { id: 6, name: 'Femibion', price: 11.00, image: 'https://static2.aptekagemini.pl/assets/produkty/0085671/min6/femibion-2-ciaza-56-tabletek-56-kapsulek-dodatkowo-lysi-tran-islandzki-plyn-smak-cytrynowy-240-ml-16006779081.jpg' },
-            { id: 7, name: 'Paracetamol', price: 9.99, image: 'https://static2.aptekagemini.pl/assets/produkty/0034102/min6/paracetamol-500mg-apteomed-20-tabletek-15925085371.jpg' },
-            { id: 8, name: 'Ascorvita', price: 14.25, image: 'https://static2.aptekagemini.pl/assets/produkty/0003359/min6/ascorvita-witamina-c-additiva-1000mg-20-tabletek-musujacych-15925072431.jpg' },
-        ];
+    constructor(dataService) {
+        this.dataService = dataService;
+        this.we$ = '...';
     }
     ngOnInit() {
+        this.getAll();
+    }
+    getAll() {
+        this.dataService.getMedicines().subscribe(response => {
+            this.items$ = response;
+            console.log(this.items$);
+        });
     }
 }
-MedicineComponent.ɵfac = function MedicineComponent_Factory(t) { return new (t || MedicineComponent)(); };
-MedicineComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: MedicineComponent, selectors: [["medicine"]], decls: 9, vars: 1, consts: [[1, "medicine"], [1, "medicine-container"], [1, "form-inline"], ["type", "search", "placeholder", "Wpisz wyszukiwan\u0105 fraz\u0119", "aria-label", "Search", 1, "form-control", "mr-sm-2"], ["type", "submit", 1, "btn", "btn-outline-primary", "my-2", "my-sm-0"], [1, "row"], ["class", "column", 4, "ngFor", "ngForOf"], [1, "column"], [1, "card", 3, "id", "title", "text", "image"]], template: function MedicineComponent_Template(rf, ctx) { if (rf & 1) {
+MedicineComponent.ɵfac = function MedicineComponent_Factory(t) { return new (t || MedicineComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_data_data_service__WEBPACK_IMPORTED_MODULE_1__["DataService"])); };
+MedicineComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: MedicineComponent, selectors: [["medicine"]], decls: 9, vars: 1, consts: [[1, "medicine"], [1, "medicine-container"], [1, "form-inline"], ["type", "search", "placeholder", "Wpisz wyszukiwan\u0105 fraz\u0119", "aria-label", "Search", 1, "form-control", "mr-sm-2"], ["type", "submit", 1, "btn", "btn-outline-primary", "my-2", "my-sm-0"], [1, "row"], ["class", "column", 4, "ngFor", "ngForOf"], [1, "column"], [1, "card", 3, "title", "description", "price", "image"]], template: function MedicineComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div");
@@ -867,14 +941,14 @@ MedicineComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefine
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](8, MedicineComponent_div_8_Template, 2, 4, "div", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](8, MedicineComponent_div_8_Template, 3, 7, "div", 6);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](8);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.PRODUCTS);
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["NgForOf"], _medicine_item_medicine_item_component__WEBPACK_IMPORTED_MODULE_2__["MedicineItemComponent"]], styles: [".medicine[_ngcontent-%COMP%] {\n  width: 100%;\n  height: auto;\n}\n\n.medicine-container[_ngcontent-%COMP%] {\n  position: relative;\n  margin-left: 15%;\n  margin-right: 15%;\n  margin-bottom: 5%;\n}\n\n.form-inline[_ngcontent-%COMP%] {\n  padding: 5%;\n  display: flex;\n  justify-content: center;\n}\n\n.form-inline[_ngcontent-%COMP%]   .form-control[_ngcontent-%COMP%] {\n  width: 90%;\n}\n\n.form-inline[_ngcontent-%COMP%]   .btn[_ngcontent-%COMP%] {\n  width: 9%;\n}\n\n.column[_ngcontent-%COMP%] {\n  float: left;\n  width: 25%;\n  padding: 0 10px;\n}\n\n.card[_ngcontent-%COMP%] {\n  padding: 4%;\n  text-align: center;\n  background-color: #f1f1f1;\n  margin-bottom: 5%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9tZWRpY2luZS9tZWRpY2luZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFdBQUE7RUFDQSxZQUFBO0FBQ0Y7O0FBRUE7RUFDRSxrQkFBQTtFQUNBLGdCQUFBO0VBQ0EsaUJBQUE7RUFDQSxpQkFBQTtBQUNGOztBQUVBO0VBQ0UsV0FBQTtFQUNBLGFBQUE7RUFDQSx1QkFBQTtBQUNGOztBQUVBO0VBQ0UsVUFBQTtBQUNGOztBQUVBO0VBQ0UsU0FBQTtBQUNGOztBQUVBO0VBQ0UsV0FBQTtFQUNBLFVBQUE7RUFDQSxlQUFBO0FBQ0Y7O0FBRUE7RUFFRSxXQUFBO0VBQ0Esa0JBQUE7RUFDQSx5QkFBQTtFQUNBLGlCQUFBO0FBQUYiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL21lZGljaW5lL21lZGljaW5lLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm1lZGljaW5lIHtcclxuICB3aWR0aDogMTAwJTtcclxuICBoZWlnaHQ6IGF1dG87XHJcbn1cclxuXHJcbi5tZWRpY2luZS1jb250YWluZXIge1xyXG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICBtYXJnaW4tbGVmdDogMTUlO1xyXG4gIG1hcmdpbi1yaWdodDogMTUlO1xyXG4gIG1hcmdpbi1ib3R0b206IDUlO1xyXG59XHJcblxyXG4uZm9ybS1pbmxpbmUge1xyXG4gIHBhZGRpbmc6IDUlO1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbn1cclxuXHJcbi5mb3JtLWlubGluZSAuZm9ybS1jb250cm9sIHtcclxuICB3aWR0aDogOTAlO1xyXG59XHJcblxyXG4uZm9ybS1pbmxpbmUgLmJ0biB7XHJcbiAgd2lkdGg6IDklO1xyXG59XHJcblxyXG4uY29sdW1uIHtcclxuICBmbG9hdDogbGVmdDtcclxuICB3aWR0aDogMjUlO1xyXG4gIHBhZGRpbmc6IDAgMTBweDtcclxufVxyXG5cclxuLmNhcmQge1xyXG4gIC8vYm94LXNoYWRvdzogMCA0cHggOHB4IDAgcmdiYSgwLCAwLCAwLCAwLjIpOyAvKiB0aGlzIGFkZHMgdGhlIFwiY2FyZFwiIGVmZmVjdCAqL1xyXG4gIHBhZGRpbmc6IDQlO1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZjFmMWYxO1xyXG4gIG1hcmdpbi1ib3R0b206IDUlO1xyXG59XHJcbiJdfQ== */"] });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.items$);
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["NgForOf"], _medicine_item_medicine_item_component__WEBPACK_IMPORTED_MODULE_3__["MedicineItemComponent"]], pipes: [_pipes_truncate_pipe__WEBPACK_IMPORTED_MODULE_4__["TruncatePipe"]], styles: [".medicine[_ngcontent-%COMP%] {\n  width: 100%;\n  height: auto;\n}\n\n.medicine-container[_ngcontent-%COMP%] {\n  position: relative;\n  margin-left: 15%;\n  margin-right: 15%;\n  margin-bottom: 5%;\n}\n\n.form-inline[_ngcontent-%COMP%] {\n  padding: 5%;\n  display: flex;\n  justify-content: center;\n}\n\n.form-inline[_ngcontent-%COMP%]   .form-control[_ngcontent-%COMP%] {\n  width: 90%;\n}\n\n.form-inline[_ngcontent-%COMP%]   .btn[_ngcontent-%COMP%] {\n  width: 9%;\n}\n\n.column[_ngcontent-%COMP%] {\n  float: left;\n  width: 25%;\n  padding: 0 10px;\n}\n\n.card[_ngcontent-%COMP%] {\n  padding: 4%;\n  text-align: center;\n  background-color: #f1f1f1;\n  margin-bottom: 5%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9tZWRpY2luZS9tZWRpY2luZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFdBQUE7RUFDQSxZQUFBO0FBQ0Y7O0FBRUE7RUFDRSxrQkFBQTtFQUNBLGdCQUFBO0VBQ0EsaUJBQUE7RUFDQSxpQkFBQTtBQUNGOztBQUVBO0VBQ0UsV0FBQTtFQUNBLGFBQUE7RUFDQSx1QkFBQTtBQUNGOztBQUVBO0VBQ0UsVUFBQTtBQUNGOztBQUVBO0VBQ0UsU0FBQTtBQUNGOztBQUVBO0VBQ0UsV0FBQTtFQUNBLFVBQUE7RUFDQSxlQUFBO0FBQ0Y7O0FBRUE7RUFFRSxXQUFBO0VBQ0Esa0JBQUE7RUFDQSx5QkFBQTtFQUNBLGlCQUFBO0FBQUYiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL21lZGljaW5lL21lZGljaW5lLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm1lZGljaW5lIHtcclxuICB3aWR0aDogMTAwJTtcclxuICBoZWlnaHQ6IGF1dG87XHJcbn1cclxuXHJcbi5tZWRpY2luZS1jb250YWluZXIge1xyXG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcclxuICBtYXJnaW4tbGVmdDogMTUlO1xyXG4gIG1hcmdpbi1yaWdodDogMTUlO1xyXG4gIG1hcmdpbi1ib3R0b206IDUlO1xyXG59XHJcblxyXG4uZm9ybS1pbmxpbmUge1xyXG4gIHBhZGRpbmc6IDUlO1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbn1cclxuXHJcbi5mb3JtLWlubGluZSAuZm9ybS1jb250cm9sIHtcclxuICB3aWR0aDogOTAlO1xyXG59XHJcblxyXG4uZm9ybS1pbmxpbmUgLmJ0biB7XHJcbiAgd2lkdGg6IDklO1xyXG59XHJcblxyXG4uY29sdW1uIHtcclxuICBmbG9hdDogbGVmdDtcclxuICB3aWR0aDogMjUlO1xyXG4gIHBhZGRpbmc6IDAgMTBweDtcclxufVxyXG5cclxuLmNhcmQge1xyXG4gIC8vYm94LXNoYWRvdzogMCA0cHggOHB4IDAgcmdiYSgwLCAwLCAwLCAwLjIpOyAvKiB0aGlzIGFkZHMgdGhlIFwiY2FyZFwiIGVmZmVjdCAqL1xyXG4gIHBhZGRpbmc6IDQlO1xyXG4gIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAjZjFmMWYxO1xyXG4gIG1hcmdpbi1ib3R0b206IDUlO1xyXG59XHJcbiJdfQ== */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](MedicineComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -883,7 +957,7 @@ MedicineComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefine
                 templateUrl: './medicine.component.html',
                 styleUrls: ['./medicine.component.scss']
             }]
-    }], function () { return []; }, null); })();
+    }], function () { return [{ type: _services_data_data_service__WEBPACK_IMPORTED_MODULE_1__["DataService"] }]; }, null); })();
 
 
 /***/ }),
