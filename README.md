@@ -7,11 +7,12 @@
 
   # Backend:
   
-  Zaimplementowana struktura trój-warstwowa dla serwera. Istniejący endpoint służący odczytywaniu leków z bazy danych.
+  Zaimplementowana struktura trój-warstwowa dla serwera. Endpoint dla rejestracji/logowania/usuwania użytkownika, pobierania listy leków z bazy.
+  Algorytm szyfrowania haseł do zmiany.  
   
   # Frontend:
   
-   Utworzone sekcje dla; strony głównej. wyszukiwarki leków, wyszukiwarki sprzętu, leków na receptę oraz formy logowanie i rejestracja. Utworzono Data Service do komunikacji 
+   Utworzone sekcje dla; strony głównej. wyszukiwarki leków, wyszukiwarki sprzętu, leków na receptę oraz formy logowanie i rejestracja (nie połączone z serwerem). Utworzono Data Service do komunikacji 
    z serwerem.
 ___________________________________________________________________________________________________________________________________________________________________________________
 
