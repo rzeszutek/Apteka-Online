@@ -7,7 +7,6 @@ import applicationException from '../service/applicationException';
 import mongoConverter from '../service/mongoConverter';
 import uniqueValidator from 'mongoose-unique-validator';
 
-
 const userRole = {
   admin: 'admin',
   user: 'user'
@@ -16,8 +15,8 @@ const userRole = {
 const userRoles = [userRole.admin, userRole.user];
 
 const userSchema = new mongoose.Schema({
-  email: { type: String, required: false, unique: true },
-  PESEL: { type: String, required: false, unique: true },
+  loginName: { type: String, required: false, unique: true, sparse: true},
+  //PESEL: { type: String, required: false, unique: true, sparse: true},
   name: { type: String, required: true, unique: false },
   surname: { type: String, required: true, unique: false},
   phone: { type: Number, required: false, unique: false },
@@ -53,7 +52,7 @@ function createNewOrUpdate(user) {
 }
 
 async function getByEmailOrPESEL(name) {
-  const result = await UserModel.findOne({ $or: [{ email: name }, { PESEL: name }] });
+  const result = await UserModel.findOne({ loginName: name });
   if (result) {
     return mongoConverter(result);
   }

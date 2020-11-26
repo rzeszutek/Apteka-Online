@@ -4,12 +4,14 @@ import PasswordDAO from '../DAO/passwordDAO';
 import TokenDAO from '../DAO/tokenDAO';
 import UserDAO from '../DAO/userDAO';
 import applicationException from '../service/applicationException';
-import sha1 from 'sha1';
+import bcrypt from 'bcrypt';
 
 function create(context) {
 
-  function hashString(password) {
-    return sha1(password);
+  function hashPassword(password) {
+    const salt = bcrypt.genSaltSync(10);
+    const hash = bcrypt.hashSync(password, salt);
+    return hash;
   }
 
   async function authenticate(name, password) {
@@ -22,7 +24,7 @@ function create(context) {
       throw applicationException.new(applicationException.NOT_FOUND, 'User does not exist or does not active');
     }
     userData = await user;
-    await PasswordDAO.authorize(user.id, hashString(password));
+    await PasswordDAO.authorize(user.id, password);
     const token = await TokenDAO.create(userData);
     return getToken(token);
   }
@@ -39,7 +41,7 @@ function create(context) {
   async function createNewOrUpdate(userData) {
     const user = await UserDAO.createNewOrUpdate(userData);
     if (await userData.password) {
-      return await PasswordDAO.createOrUpdate({userId: user.id, password: hashString(userData.password)});
+      return await PasswordDAO.createOrUpdate({userId: user.id, password: hashPassword(userData.password)});
     } else {
       return user;
     }

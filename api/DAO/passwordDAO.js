@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 import * as _ from 'lodash';
 import applicationException from '../service/applicationException';
 import mongoConverter from '../service/mongoConverter';
-
+import bcrypt from 'bcrypt';
 
 const passwordSchema = new mongoose.Schema({
   userId: { type: mongoose.Types.ObjectId, ref: 'user', required: true, unique: true },
@@ -27,8 +27,9 @@ async function createOrUpdate(data) {
 }
 
 async function authorize(userId, password) {
-  const result = await PasswordModel.findOne({ userId: userId, password: password });
-  if (result && mongoConverter(result)) {
+  const result = await PasswordModel.findOne({ userId: userId});
+  const hash = bcrypt.compareSync(password, result.password);
+  if (hash) {
     return true;
   }
   throw applicationException.new(applicationException.UNAUTHORIZED, 'User and password does not match');
