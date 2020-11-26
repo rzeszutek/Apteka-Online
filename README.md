@@ -8,7 +8,7 @@
   # Backend:
   
   Zaimplementowana struktura trój-warstwowa dla serwera. Endpoint dla rejestracji/logowania/usuwania użytkownika, pobierania listy leków z bazy.
-  Algorytm szyfrowania haseł do zmiany.  
+  Algorytm haszowania haseł zaktualizowano(bcrypt).  
   
   # Frontend:
   
