@@ -28,7 +28,7 @@ async function create(user) {
   const access = 'auth';
   const userData = {
     userId: user.id,
-    name: user.email,
+    name: user.loginName,
     role: user.role,
     access: access
   };
