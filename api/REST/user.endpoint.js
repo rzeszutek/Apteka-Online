@@ -16,14 +16,14 @@ const userEndpoint = (router) => {
     }
   });
 
-  router.delete('/api/user/logout', async (request, response, next) => {
-    try {
-      let result = await business(request).getUserManager(request).removeHashSession(request.body.userId);
-      response.status(200).send('Access token for user with id: ' + result + ' deleted.');
-    } catch (error) {
-      applicationException.errorHandler(error, response);
-    }
-  })
+  // router.delete('/api/user/logout', async (request, response, next) => {
+  //   try {
+  //     let result = await business(request).getUserManager(request).removeHashSession(request.body.userId);
+  //     response.status(200).send('Access token for user with id: ' + result + ' deleted.');
+  //   } catch (error) {
+  //     applicationException.errorHandler(error, response);
+  //   }
+  // })
 
   router.post('/api/user/create', async (request, response, next) => {
     try {
@@ -43,14 +43,14 @@ const userEndpoint = (router) => {
     }
   })
 
-  // router.delete('/api/user/logout/:userId', auth, async (request, response, next) => {
-  //   try {
-  //     let result = await business(request).getUserManager(request).removeHashSession(request.body.userId);
-  //     response.status(200).send(result);
-  //   } catch (error) {
-  //     applicationException.errorHandler(error, response);
-  //   }
-  // });
+  router.delete('/api/user/logout/:userId', auth, async (request, response, next) => {
+    try {
+      let result = await business(request).getUserManager(request).removeHashSession(request.params.userId);
+      response.status(200).send(result);
+    } catch (error) {
+      applicationException.errorHandler(error, response);
+    }
+  });
 };
 
 export default userEndpoint;

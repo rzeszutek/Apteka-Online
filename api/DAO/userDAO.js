@@ -20,8 +20,8 @@ const userSchema = new mongoose.Schema({
   name: { type: String, required: true, unique: false },
   surname: { type: String, required: true, unique: false},
   phone: { type: Number, required: false, unique: false },
-  role: { type: String, enum: userRoles, default: userRole.user, required: false },
-  active: { type: Boolean, default: false, required: false },
+  role: { type: String, enum: userRoles, default: userRole.user },
+  active: { type: Boolean, default: true },
   isAdmin: { type: Boolean, default: false, required: false }
 }, {
   collection: 'users'

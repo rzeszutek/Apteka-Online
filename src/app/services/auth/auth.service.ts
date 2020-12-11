@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-//import {JwtHelper} from 'angular2-jwt';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {JwtHelper} from 'angular2-jwt';
 import {map} from 'rxjs/operators';
-import {Token} from '../models/token';
+import {Token} from '../../models/token';
 
 @Injectable()
 export class AuthService {
@@ -13,7 +13,7 @@ export class AuthService {
   }
 
   authenticate(credentials) {
-    return this.http.post(this.url + '/user/auth', {
+    return this.http.post(this.url + '/api/user/auth', {
       login: credentials.login,
       password: credentials.password
     }).pipe(
@@ -28,16 +28,13 @@ export class AuthService {
   }
 
   createOrUpdate(credentials) {
-    return this.http.post(this.url + '/user/create', credentials);
+    return this.http.post(this.url + '/api/user/create', credentials);
   }
 
   logout() {
-    return this.http.delete(this.url + '/user/logout/' + this.currentUser.userId)
-      .pipe(
-        map(() => {
-          localStorage.removeItem('token');
-        })
-      );
+    return this.http.delete(this.url + '/api/user/logout/' + this.currentUser.userId).subscribe( () => {
+      localStorage.removeItem('token');
+    });
   }
 
   isLoggedIn() {
