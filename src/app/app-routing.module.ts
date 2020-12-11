@@ -9,6 +9,7 @@ import {MedicineItemDetailsComponent} from './components/medicine-item-details/m
 import {FooterComponent} from './components/footer/footer.component';
 import {PrescriptionComponent} from './components/prescription/prescription.component';
 import {EquipmentComponent} from './components/equipment/equipment.component';
+import {AuthGuard} from "./services/auth/auth.guard";
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home'},
@@ -18,7 +19,7 @@ const routes: Routes = [
   { path: 'medicine', component: MedicineComponent},
   { path: 'medicine-item', component: MedicineItemComponent},
   { path: 'medicine-item-details', component: MedicineItemDetailsComponent},
-  { path: 'prescription', component: PrescriptionComponent},
+  { path: 'prescription', component: PrescriptionComponent, canActivate: [AuthGuard]},
   { path: 'equipment', component: EquipmentComponent},
   { path: 'footer', component: FooterComponent},
 ];

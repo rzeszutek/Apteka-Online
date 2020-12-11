@@ -22,5 +22,8 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="equipment" routerLinkActive="active-route">Sprzęt</a>
       </li>
+      <li *ngIf=loggedIn()>
+        <a (click)="logout()" class="nav-link" routerLink="home">Wyloguj</a>
+      </li>
     </ul>
 </nav>

@@ -17,8 +17,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { DataService } from "./services/data/data.service";
-import { HttpClientModule } from "@angular/common/http";
+import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { TruncatePipe } from './pipes/truncate.pipe';
+import { AuthService } from "./services/auth/auth.service";
+import { AuthInterceptor } from "./services/auth/auth.interceptor";
+import {RouterModule} from "@angular/router";
+import { AuthGuard } from "./services/auth/auth.guard";
+import {FormsModule} from "@angular/forms";
+
+declare module "@angular/core" {
+  interface ModuleWithProviders<T = any> {
+    ngModule: Type<T>;
+    providers?: Provider[];
+  }
+}
 
 @NgModule({
   declarations: [
@@ -42,9 +54,13 @@ import { TruncatePipe } from './pipes/truncate.pipe';
     MatCardModule,
     MatButtonModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [
     DataService,
+    AuthService,
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
