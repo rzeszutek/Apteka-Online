@@ -1,12 +1,11 @@
 import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'medicine-item',
-  templateUrl: './medicine-item.component.html',
-  styleUrls: ['./medicine-item.component.scss']
+  selector: 'equipment-item',
+  templateUrl: './equipment-item.component.html',
+  styleUrls: ['./equipment-item.component.scss']
 })
-export class MedicineItemComponent implements OnInit {
+export class EquipmentItemComponent implements OnInit {
 
   @Input() id: string;
   @Input() title: string;
@@ -18,6 +17,7 @@ export class MedicineItemComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
 }

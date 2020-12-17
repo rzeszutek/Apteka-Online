@@ -1,0 +1,39 @@
+.equipment {
+  width: 100%;
+  height: auto;
+}
+
+.equipment-container {
+  position: relative;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 5%;
+}
+
+.form-inline {
+  padding: 5%;
+  display: flex;
+  justify-content: center;
+}
+
+.form-inline .form-control {
+  width: 90%;
+}
+
+.form-inline .btn {
+  width: 9%;
+}
+
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+.card {
+  //box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 4%;
+  text-align: center;
+  background-color: #f1f1f1;
+  margin-bottom: 5%;
+}
