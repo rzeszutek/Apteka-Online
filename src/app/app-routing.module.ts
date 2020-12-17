@@ -10,6 +10,8 @@ import {FooterComponent} from './components/footer/footer.component';
 import {PrescriptionComponent} from './components/prescription/prescription.component';
 import {EquipmentComponent} from './components/equipment/equipment.component';
 import {AuthGuard} from "./services/auth/auth.guard";
+import {EquipmentItemComponent} from "./components/equipment-item/equipment-item.component";
+import {EquipmentItemDetailsComponent} from "./components/equipment-item-details/equipment-item-details.component";
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home'},
@@ -18,14 +20,16 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent},
   { path: 'medicine', component: MedicineComponent},
   { path: 'medicine-item', component: MedicineItemComponent},
-  { path: 'medicine-item-details', component: MedicineItemDetailsComponent},
-  { path: 'prescription', component: PrescriptionComponent, canActivate: [AuthGuard]},
+  { path: 'medicine-item-details/:id', component: MedicineItemDetailsComponent},
   { path: 'equipment', component: EquipmentComponent},
+  { path: 'equipment-item', component: EquipmentItemComponent},
+  { path: 'equipment-item-details/:id', component: EquipmentItemDetailsComponent},
+  { path: 'prescription', component: PrescriptionComponent, canActivate: [AuthGuard]},
   { path: 'footer', component: FooterComponent},
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

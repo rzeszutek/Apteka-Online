@@ -24,6 +24,8 @@ import { AuthInterceptor } from "./services/auth/auth.interceptor";
 import {RouterModule} from "@angular/router";
 import { AuthGuard } from "./services/auth/auth.guard";
 import {FormsModule} from "@angular/forms";
+import { EquipmentItemComponent } from './components/equipment-item/equipment-item.component';
+import { EquipmentItemDetailsComponent } from './components/equipment-item-details/equipment-item-details.component';
 
 declare module "@angular/core" {
   interface ModuleWithProviders<T = any> {
@@ -45,7 +47,9 @@ declare module "@angular/core" {
     MedicineItemDetailsComponent,
     PrescriptionComponent,
     EquipmentComponent,
-    TruncatePipe
+    TruncatePipe,
+    EquipmentItemComponent,
+    EquipmentItemDetailsComponent
   ],
   imports: [
     BrowserModule,

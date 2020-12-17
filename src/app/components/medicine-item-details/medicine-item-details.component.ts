@@ -14,10 +14,12 @@ export class MedicineItemDetailsComponent implements OnInit {
   public name: string;
   public price: string;
   public imageUrl: string;
-  public reimbursed: boolean;
-  public prescription: boolean;
+  public reimbursed: string;
+  public prescription: string;
   public description: string;
   public id: string;
+
+  public count: number = 0;
 
   constructor(private dataService: DataService, private route: ActivatedRoute) { }
 
@@ -28,16 +30,25 @@ export class MedicineItemDetailsComponent implements OnInit {
         id = params.get('id');
       });
 
-    this.dataService.getById(id).subscribe(res => {
-      this.items$ = res;
-      this.name = res['image'];
+    this.dataService.getMedicineById(id).subscribe(res => {
+      this.id = res['id']
+      this.name = res['name'];
       this.price = res['price'];
       this.imageUrl = res['imageUrl'];
       this.reimbursed = res['reimbursed'];
       this.prescription = res['prescription'];
       this.description = res['description'];
-      this.id = res['id'];
-      console.log(res);
+      //console.log(res);
+      if (this.prescription == 'true') {
+        this.prescription = 'Tak';
+      } else {
+        this.prescription = "Nie";
+      }
+      if (this.reimbursed == 'true') {
+        this.reimbursed = 'Tak';
+      } else {
+        this.reimbursed = "Nie";
+      }
     });
   }
 }

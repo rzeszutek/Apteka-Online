@@ -12,7 +12,15 @@ export class DataService {
     return this.http.get(this.url + '/api/medicine');
   }
 
-  getById(id) {
+  getMedicineById(id) {
     return this.http.get(this.url + '/api/medicine/' + id);
+  }
+
+  getEquipment() {
+    return this.http.get(this.url + '/api/equipment');
+  }
+
+  getEquipmentById(id) {
+    return this.http.get(this.url + '/api/equipment/' + id);
   }
 }

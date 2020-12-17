@@ -1,10 +1,12 @@
 'use strict';
 
-import endpoint from './medicines.endpoints';
 import userEndpoint from "./user.endpoint";
+import medicineEndpoint from "./medicines.endpoints";
+import equipmentEndpoint from "./equipment.endpoint";
 
 const routes = (router, config) => {
-  endpoint(router);
+  medicineEndpoint(router);
+  equipmentEndpoint(router)
   userEndpoint(router);
 };
 

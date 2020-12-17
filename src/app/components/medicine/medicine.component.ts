@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {DataService} from "../../services/data/data.service";
+import { DataService } from "../../services/data/data.service";
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -10,7 +10,6 @@ import {DataService} from "../../services/data/data.service";
 export class MedicineComponent implements OnInit {
 
   public items$: any;
-  public we$: string = '...';
 
   constructor(private dataService: DataService) { }
 
