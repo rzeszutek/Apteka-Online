@@ -1,5 +1,6 @@
 .navbar {
   position: sticky;
+  display: flex;
   width: 100%;
   top: 0px;
   z-index: 999;
@@ -26,4 +27,25 @@ li a.active-route {
 
 li a:hover {
   border-bottom: 2px solid cornflowerblue;
+}
+
+.cart {
+  display: flex;
+  position: absolute;
+  right: 4%;
+}
+
+output {
+  font-weight: bolder;
+  margin-left: 10%;
+  font-size: 130%;
+}
+
+.fa.fa-shopping-cart.fa-2x {
+  outline: none;
+}
+
+.fa.fa-user-circle.fa-2x {
+  outline: none;
+  margin-right: 40%;
 }

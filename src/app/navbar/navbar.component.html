@@ -26,4 +26,9 @@
         <a (click)="logout()" class="nav-link" routerLink="home">Wyloguj</a>
       </li>
     </ul>
+  <div class="cart">
+    <i *ngIf="loggedIn()" class="fa fa-user-circle fa-2x" aria-hidden="true"></i>
+    <i class="fa fa-shopping-cart fa-2x" aria-hidden="true" routerLink="order"></i>
+    <output>{{getProductCount()}}</output>
+  </div>
 </nav>

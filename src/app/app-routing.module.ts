@@ -12,6 +12,8 @@ import {EquipmentComponent} from './components/equipment/equipment.component';
 import {AuthGuard} from "./services/auth/auth.guard";
 import {EquipmentItemComponent} from "./components/equipment-item/equipment-item.component";
 import {EquipmentItemDetailsComponent} from "./components/equipment-item-details/equipment-item-details.component";
+import {OrderComponent} from "./components/order/order.component";
+import {OrderItemComponent} from "./components/order-item/order-item.component";
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home'},
@@ -25,6 +27,8 @@ const routes: Routes = [
   { path: 'equipment-item', component: EquipmentItemComponent},
   { path: 'equipment-item-details/:id', component: EquipmentItemDetailsComponent},
   { path: 'prescription', component: PrescriptionComponent, canActivate: [AuthGuard]},
+  { path: 'order', component: OrderComponent},
+  { path: 'order-item', component: OrderItemComponent},
   { path: 'footer', component: FooterComponent},
 ];
 

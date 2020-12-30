@@ -21,11 +21,13 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { TruncatePipe } from './pipes/truncate.pipe';
 import { AuthService } from "./services/auth/auth.service";
 import { AuthInterceptor } from "./services/auth/auth.interceptor";
-import {RouterModule} from "@angular/router";
+import { RouterModule } from "@angular/router";
 import { AuthGuard } from "./services/auth/auth.guard";
-import {FormsModule} from "@angular/forms";
+import { FormsModule } from "@angular/forms";
 import { EquipmentItemComponent } from './components/equipment-item/equipment-item.component';
 import { EquipmentItemDetailsComponent } from './components/equipment-item-details/equipment-item-details.component';
+import { OrderComponent } from './components/order/order.component';
+import { OrderItemComponent } from './components/order-item/order-item.component';
 
 declare module "@angular/core" {
   interface ModuleWithProviders<T = any> {
@@ -49,7 +51,9 @@ declare module "@angular/core" {
     EquipmentComponent,
     TruncatePipe,
     EquipmentItemComponent,
-    EquipmentItemDetailsComponent
+    EquipmentItemDetailsComponent,
+    OrderComponent,
+    OrderItemComponent
   ],
   imports: [
     BrowserModule,

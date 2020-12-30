@@ -1,0 +1,27 @@
+<div class="order">
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let item of items$">
+      <order-item [id]="item.id" [title]="item.name" [price]="item.price" [quantity]="item.quantity">
+      </order-item>
+    </li>
+  </ul>
+</div>
+<div class="sum">
+  <div class="card">
+    <div class="card-header">
+      <b>Łączna kwota:</b>
+      {{sum}} zł
+    </div>
+  </div>
+</div>
+<div class="sum">
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+    <label class="form-check-label" for="inlineRadio1">Dostawa</label>
+    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+    <label class="form-check-label" for="inlineRadio2">Odbiór osobisty</label>
+  </div>
+</div>
+<div class="sum">
+  <button class="btn btn-primary">Dalej</button>
+</div>
