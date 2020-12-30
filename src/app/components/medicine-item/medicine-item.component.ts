@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {CartService} from "../../services/cart/cart.service";
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -16,8 +17,15 @@ export class MedicineItemComponent implements OnInit {
 
   public count: number = 0;
 
-  constructor() { }
+  constructor(private cartService: CartService) { }
 
   ngOnInit(): void {}
 
+  addMedicineToCart(product) {
+    return this.cartService.addMedicineToCart(product);
+  }
+
+  removeMedicineFromCart(id) {
+    return this.cartService.removeMedicineFromCart(id);
+  }
 }

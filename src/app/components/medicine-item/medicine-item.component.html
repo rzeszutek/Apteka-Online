@@ -8,9 +8,9 @@
     <p class="card-text"><b>{{price}}</b></p>
     <div class="buttons-container">
       <button [routerLink]="['/medicine-item-details',id]" class="btn btn-primary">Czytaj więcej</button>
-      <button class="btn btn-outline-primary">-</button>
+      <button (click)="removeMedicineFromCart(id)" class="btn btn-outline-primary">-</button>
       <output>{{count}}</output>
-      <button class="btn btn-outline-primary">+</button>
+      <button (click)="addMedicineToCart({'id': id,'name': title, 'price': price, 'quantity': 1})"  class="btn btn-outline-primary">+</button>
     </div>
   </div>
 </div>
