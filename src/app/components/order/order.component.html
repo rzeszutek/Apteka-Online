@@ -14,14 +14,36 @@
     </div>
   </div>
 </div>
-<div class="sum">
-  <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-    <label class="form-check-label" for="inlineRadio1">Dostawa</label>
-    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-    <label class="form-check-label" for="inlineRadio2">Odbiór osobisty</label>
+<form method="post">
+  <div class="sum">
+    <div class="form-check form-check-inline">
+      <input [(ngModel)]="credentials.shipment" class="form-check-input" type="radio" name="shipmentOptions" id="inlineRadio1" value="true">
+      <label class="form-check-label" for="inlineRadio1">Dostawa</label>
+      <input [(ngModel)]="credentials.shipment" class="form-check-input" type="radio" name="shipmentOptions" id="inlineRadio2" value="false">
+      <label class="form-check-label" for="inlineRadio2">Odbiór osobisty</label>
+    </div>
   </div>
-</div>
+<!--  <div class="sum">-->
+<!--    <button class="btn btn-primary btn-lg" data-target="div" type="button" data-toggle="collapse">Dostawa</button>-->
+<!--    <div class="collapse" id="div">-->
+<!--      <div class="card card-body">-->
+<!--        <p>WebSocket is closed before the connection is established.</p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+  <div class="address-label">
+    <label class="label" for="address">Adres</label>
+    <input [(ngModel)]="credentials.address" name="address" type="text" id="address" placeholder="Wprowadź adres np. Tarnów, ul. Mickiewicza 56">
+  </div>
+  <div class="sum">
+    <div class="form-check form-check-inline">
+      <input [(ngModel)]="credentials.payment" class="form-check-input" type="radio" name="paymentOptions" id="inlineRadio3" value="Przy odbiorze">
+      <label class="form-check-label" for="inlineRadio3">Przy odbiorze</label>
+      <input [(ngModel)]="credentials.payment" class="form-check-input" type="radio" name="paymentOptions" id="inlineRadio4" value="Blik">
+      <label class="form-check-label" for="inlineRadio4">Blik</label>
+    </div>
+  </div>
+</form>
 <div class="sum">
-  <button class="btn btn-primary">Dalej</button>
+  <button (click)="create()" type="submit" class="btn btn-primary">Dalej</button>
 </div>
