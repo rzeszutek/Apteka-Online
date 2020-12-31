@@ -19,8 +19,7 @@ export class SignupComponent implements OnInit {
 
   constructor(private authService: AuthService, private router: Router) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   create() {
     this.authService.createOrUpdate(this.credentials).subscribe((result) => {
