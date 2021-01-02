@@ -38,7 +38,6 @@ async function authorize(userId, password) {
 export default {
   createOrUpdate: createOrUpdate,
   authorize: authorize,
-
   model: PasswordModel
 };
 

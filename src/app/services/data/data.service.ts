@@ -23,4 +23,8 @@ export class DataService {
   getEquipmentById(id) {
     return this.http.get(this.url + '/api/equipment/' + id);
   }
+
+  getPrescription(PESEL, code) {
+    return this.http.get(this.url + '/api/prescription',  {params: {PESEL, code}});
+  }
 }
