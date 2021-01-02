@@ -76,7 +76,6 @@ export default {
   getByEmailOrPESEL: getByEmailOrPESEL,
   get: get,
   removeById: removeById,
-
   userRole: userRole,
   model: UserModel
 };

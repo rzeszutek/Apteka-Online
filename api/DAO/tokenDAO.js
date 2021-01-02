@@ -66,7 +66,6 @@ export default {
   create: create,
   get: get,
   remove: remove,
-
   tokenTypeEnum: tokenTypeEnum,
   model: TokenModel
 };

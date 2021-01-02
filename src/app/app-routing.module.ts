@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: 'equipment', component: EquipmentComponent},
   { path: 'equipment-item', component: EquipmentItemComponent},
   { path: 'equipment-item-details/:id', component: EquipmentItemDetailsComponent},
-  { path: 'prescription', component: PrescriptionComponent, canActivate: [AuthGuard]},
+  { path: 'prescription', component: PrescriptionComponent},
   { path: 'order', component: OrderComponent},
   { path: 'order-item', component: OrderItemComponent},
   { path: 'footer', component: FooterComponent},

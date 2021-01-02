@@ -68,6 +68,5 @@ export default {
   query: query,
   get: get,
   removeById: removeById,
-
   model: OrderModel
 };
