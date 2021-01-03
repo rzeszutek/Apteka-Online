@@ -1,0 +1,21 @@
+<div class="container">
+  <mat-drawer-container class="example-container">
+    <mat-drawer style="width: 15%;" mode="side" opened>
+      <mat-nav-list>
+        <p style="margin-top: 5%; font-size: 110%; font-weight: bold;">Panel zarządzania</p>
+        <mat-divider style="margin-bottom: 5%;"></mat-divider>
+        <a mat-list-item (click)="router('medicine')"> Dodaj lek </a>
+        <a mat-list-item (click)="router('equipment')"> Dodaj sprzęt </a>
+        <a mat-list-item (click)="router('orders')"> Zamówienia </a>
+      </mat-nav-list>
+    </mat-drawer>
+    <mat-drawer-content>
+      <div class="main-container">
+        dsadfas
+      </div>
+      <router-outlet *ngIf="check('medicine')" name="medicine-outlet"></router-outlet>
+      <router-outlet *ngIf="check('equipment')" name="equipment-outlet"></router-outlet>
+      <router-outlet *ngIf="check('orders')" name="orders-panel-outlet"></router-outlet>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>

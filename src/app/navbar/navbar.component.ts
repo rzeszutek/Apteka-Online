@@ -26,4 +26,12 @@ export class NavbarComponent implements OnInit {
   getProductCount() {
     return this.cartService.getProductCount();
   }
+
+  getEmail() {
+    return this.authService.getEmail();
+  }
+
+  isAdmin() {
+    return this.authService.isAdmin();
+  }
 }

@@ -14,6 +14,10 @@ import {EquipmentItemComponent} from "./components/equipment-item/equipment-item
 import {EquipmentItemDetailsComponent} from "./components/equipment-item-details/equipment-item-details.component";
 import {OrderComponent} from "./components/order/order.component";
 import {OrderItemComponent} from "./components/order-item/order-item.component";
+import {ControlPanelComponent} from "./components/control-panel/control-panel.component";
+import {AddMedicineComponent} from "./components/add-medicine/add-medicine.component";
+import {AddEquipmentComponent} from "./components/add-equipment/add-equipment.component";
+import {OrdersPanelComponent} from "./components/orders-panel/orders-panel.component";
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home'},
@@ -30,6 +34,11 @@ const routes: Routes = [
   { path: 'order', component: OrderComponent},
   { path: 'order-item', component: OrderItemComponent},
   { path: 'footer', component: FooterComponent},
+  { path: 'control-panel', component: ControlPanelComponent, children: [
+      { path: 'add-medicine', component: AddMedicineComponent, outlet: 'medicine-outlet' },
+      { path: 'add-equipment', component: AddEquipmentComponent, outlet: 'equipment-outlet' },
+      { path: 'orders-panel', component: OrdersPanelComponent, outlet: 'orders-panel-outlet' }
+    ]}
 ];
 
 @NgModule({

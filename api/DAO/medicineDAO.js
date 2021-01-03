@@ -20,6 +20,26 @@ medicineSchema.plugin(uniqueValidator);
 
 const MedicineModel = mongoose.model('medicines', medicineSchema);
 
+function createNewOrUpdate(order) {
+  return Promise.resolve().then(() => {
+    if (!order.id) {
+      return new MedicineModel(order).save().then(result => {
+        if (result) {
+          return mongoConverter(result);
+        }
+      });
+    } else {
+      return MedicineModel.findByIdAndUpdate(order.id, _.omit(order, 'id'), { new: true });
+    }
+  }).catch(error => {
+    if ('ValidationError' === error.name) {
+      error = error.errors[Object.keys(error.errors)[0]];
+      throw applicationException.new(applicationException.BAD_REQUEST, error.message);
+    }
+    throw error;
+  });
+}
+
 async function query() {
   const result = await MedicineModel.find({});
   if (result) {
@@ -35,7 +55,13 @@ async function get(id) {
   throw applicationException.new(applicationException.NOT_FOUND, 'Medicine not found');
 }
 
+async function removeById(id) {
+  return await MedicineModel.findByIdAndRemove(id);
+}
+
 export default {
+  createNewOrUpdate: createNewOrUpdate,
+  removeById: removeById,
   query: query,
   get: get,
   model: MedicineModel

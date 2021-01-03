@@ -31,6 +31,16 @@ export class AuthService {
     return this.http.post(this.url + '/api/user/create', credentials);
   }
 
+  getEmail() {
+    return this.currentUser.name;
+  }
+
+  isAdmin() {
+    if (this.currentUser.role == 'admin') {
+      return true;
+    }
+  }
+
   logout() {
     return this.http.delete(this.url + '/api/user/logout/' + this.currentUser.userId).subscribe( () => {
       localStorage.removeItem('token');

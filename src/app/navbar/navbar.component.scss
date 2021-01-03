@@ -32,12 +32,12 @@ li a:hover {
 .cart {
   display: flex;
   position: absolute;
-  right: 4%;
+  right: 2%;
 }
 
 output {
   font-weight: bolder;
-  margin-left: 10%;
+  margin-left: 10px;
   font-size: 130%;
 }
 
@@ -47,5 +47,34 @@ output {
 
 .fa.fa-user-circle.fa-2x {
   outline: none;
-  margin-right: 40%;
+  margin-top: 1%;
+}
+
+.dropdown-user {
+  outline: none;
+}
+
+.user-name {
+  margin: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+  font-size: 95%;
+  font-weight: bolder;
+}
+
+.user {
+  display: flex;
+  float: right;
+  border: 2px solid lightgray;
+  border-radius: 10px;
+}
+
+.cart-icon {
+  float: left;
+  padding-left: 40px;
+  margin-top: 1%;
+}
+
+.mat-icon {
+  outline: none;
 }
