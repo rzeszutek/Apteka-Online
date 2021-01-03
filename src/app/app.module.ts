@@ -28,6 +28,14 @@ import { EquipmentItemComponent } from './components/equipment-item/equipment-it
 import { EquipmentItemDetailsComponent } from './components/equipment-item-details/equipment-item-details.component';
 import { OrderComponent } from './components/order/order.component';
 import { OrderItemComponent } from './components/order-item/order-item.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from "@angular/material/icon";
+import { ControlPanelComponent } from './components/control-panel/control-panel.component';
+import { MatSidenavModule } from "@angular/material/sidenav";
+import { MatListModule } from "@angular/material/list";
+import { AddMedicineComponent } from './components/add-medicine/add-medicine.component';
+import { AddEquipmentComponent } from './components/add-equipment/add-equipment.component';
+import { OrdersPanelComponent } from './components/orders-panel/orders-panel.component';
 
 declare module "@angular/core" {
   interface ModuleWithProviders<T = any> {
@@ -53,7 +61,11 @@ declare module "@angular/core" {
     EquipmentItemComponent,
     EquipmentItemDetailsComponent,
     OrderComponent,
-    OrderItemComponent
+    OrderItemComponent,
+    ControlPanelComponent,
+    AddMedicineComponent,
+    AddEquipmentComponent,
+    OrdersPanelComponent
   ],
   imports: [
     BrowserModule,
@@ -63,6 +75,10 @@ declare module "@angular/core" {
     MatButtonModule,
     HttpClientModule,
     FormsModule,
+    MatIconModule,
+    MatMenuModule,
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [
     DataService,

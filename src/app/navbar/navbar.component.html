@@ -22,13 +22,38 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="prescription" routerLinkActive="active-route">E-Recepty</a>
       </li>
-      <li *ngIf=loggedIn()>
-        <a (click)="logout()" class="nav-link" routerLink="home">Wyloguj</a>
-      </li>
     </ul>
   <div class="cart">
-    <i *ngIf="loggedIn()" class="fa fa-user-circle fa-2x" aria-hidden="true"></i>
-    <i class="fa fa-shopping-cart fa-2x" aria-hidden="true" routerLink="order"></i>
-    <output>{{getProductCount()}}</output>
+    <div *ngIf="loggedIn()" class="user">
+      <p class="user-name">{{getEmail()}}</p>
+      <i class="fa fa-user-circle fa-2x" aria-hidden="true"></i>
+      <button class="dropdown-user" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu" xPosition="before">
+        <button *ngIf="isAdmin()" [routerLink]="['/control-panel', {
+        outlets: {
+          'medicine-outlet': ['add-medicine'],
+          'equipment-outlet': ['add-equipment'],
+          'orders-panel-outlet': ['orders-panel']
+        }
+        }]" style="outline: none;" mat-menu-item>
+          <mat-icon>build</mat-icon>
+          <span>Panel Sterowania</span>
+        </button>
+        <button style="outline: none;" mat-menu-item>
+          <mat-icon>settings</mat-icon>
+          <span>Ustawienia</span>
+        </button>
+        <button style="outline: none;" mat-menu-item (click)="logout()">
+          <mat-icon>login</mat-icon>
+          <span>Wyloguj</span>
+        </button>
+      </mat-menu>
+    </div>
+    <div class="cart-icon">
+      <i class="fa fa-shopping-cart fa-2x" aria-hidden="true" routerLink="order"></i>
+      <output>{{getProductCount()}}</output>
+    </div>
   </div>
 </nav>

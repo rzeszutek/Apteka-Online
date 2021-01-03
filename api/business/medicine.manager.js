@@ -1,6 +1,7 @@
 'use strict';
 
 import medicineDAO from "../DAO/medicineDAO";
+import UserDAO from "../DAO/userDAO";
 
 function create(context) {
   async function query() {
@@ -24,9 +25,14 @@ function create(context) {
     }
   }
 
+  async function removeMedicineById(id) {
+    return await medicineDAO.removeById(id);
+  }
+
   return {
     query: query,
     get: get,
+    removeMedicineById: removeMedicineById,
     createNewOrUpdate: createNewOrUpdate,
   };
 }

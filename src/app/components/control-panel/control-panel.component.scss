@@ -1,0 +1,25 @@
+.container {
+  display: inline-block;
+}
+
+.example-container {
+  height: 900px;
+}
+
+mat-nav-list {
+  text-decoration: none;
+}
+
+a {
+  outline: none;
+}
+
+mat-list-item {
+  text-decoration: none;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+}
