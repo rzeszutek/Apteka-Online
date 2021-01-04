@@ -27,4 +27,12 @@ export class OrderService {
   getToken() {
     return localStorage.getItem('token');
   }
+
+  getOrders() {
+    return this.http.get(this.url + '/api/order');
+  }
+
+  deleteOrder(id) {
+    return this.http.delete(this.url + '/api/order/delete/' + id);
+  }
 }

@@ -34,6 +34,15 @@ const userEndpoint = (router) => {
     }
   });
 
+  router.post('/api/user/passwordCheck', async (request, response, next) => {
+    try {
+      let result = await business(request).getUserManager(request).checkPassword(request.body.loginName, request.body.password);
+      response.status(200).send(result);
+    } catch (error) {
+      applicationException.errorHandler(error, response);
+    }
+  });
+
   router.delete('/api/user/delete', async (request, response, next) => {
     try {
       let result = await business(request).getUserManager(request).removeUserById(request.body);

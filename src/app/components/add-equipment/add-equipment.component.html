@@ -1,3 +1,16 @@
 <div class="container">
-  <p>dasdsadas</p>
+  <form action="post" autocomplete="off" method="POST">
+    <div>
+      <h1>Uzupełnij dane</h1>
+      <label for="name">Nazwa sprzętu</label>
+      <input [(ngModel)]="credentials.name" name="name" type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Wprowadź nazwę sprzętu">
+      <label for="price">Cena</label>
+      <input [(ngModel)]="credentials.price" name="price" type="text" name="price" class="form-control" id="price" aria-describedby="passwordHelp" placeholder="Wprowadź cenę np. 59.99">
+      <label for="imageUrl">Adres URL</label>
+      <input [(ngModel)]="credentials.imageUrl" name="imageUrl" type="text" name="imageUrl" class="form-control" id="imageUrl" aria-describedby="emailHelp" placeholder="Wprowadź adres URL">
+      <label for="description">Opis sprzetu</label>
+      <input [(ngModel)]="credentials.description" name="description" type="text" class="form-control" style="height: 100px;" id="description" aria-describedby="emailHelp" placeholder="Wprowadź opis sprzętu">
+      <button (click)="createOrUpdateEquipment()" type="submit" class="btn btn-primary btn-lg">Dodaj sprzęt</button>
+    </div>
+  </form>
 </div>

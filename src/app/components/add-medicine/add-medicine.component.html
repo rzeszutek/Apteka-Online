@@ -1,3 +1,36 @@
 <div class="container">
-  <p>random text</p>
+  <form action="post" autocomplete="off" method="POST">
+    <div>
+      <h1>Uzupełnij dane</h1>
+      <label for="name">Nazwa leku</label>
+      <input [(ngModel)]="credentials.name" name="name" type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Wprowadź nazwę leku">
+      <label for="price">Cena</label>
+      <input [(ngModel)]="credentials.price" name="price" type="text" name="price" class="form-control" id="price" aria-describedby="passwordHelp" placeholder="Wprowadź cenę np. 7.99">
+      <label for="imageUrl">Adres URL</label>
+      <input [(ngModel)]="credentials.imageUrl" name="imageUrl" type="text" name="imageUrl" class="form-control" id="imageUrl" aria-describedby="emailHelp" placeholder="Wprowadź adres URL">
+      <div class="reimbursed-container">
+        <label for="reimbursed">Lek refundowany</label>
+        <mat-form-field appearance="fill">
+          <mat-select [(ngModel)]="credentials.reimbursed" name="reimbursed" id="reimbursed">
+            <mat-option *ngFor="let option of optionsReimbursed" [value]="option.value">
+              {{option.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="reimbursed-container">
+        <label for="prescription">Lek na receptę</label>
+        <mat-form-field appearance="fill">
+          <mat-select [(ngModel)]="credentials.prescription" name="reimbursed" id="prescription">
+            <mat-option *ngFor="let option of optionsPrescription" [value]="option.value">
+              {{option.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <label for="description">Opis leku</label>
+      <input [(ngModel)]="credentials.description" name="description" type="text" class="form-control" style="height: 100px;" id="description" aria-describedby="emailHelp" placeholder="Wprowadź opis leku">
+      <button (click)="createOrUpdateMedicine()" type="submit" class="btn btn-primary btn-lg">Dodaj lek</button>
+    </div>
+  </form>
 </div>

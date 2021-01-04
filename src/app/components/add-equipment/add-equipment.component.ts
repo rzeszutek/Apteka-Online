@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {DataService} from "../../services/data/data.service";
 
 @Component({
   selector: 'add-equipment',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddEquipmentComponent implements OnInit {
 
-  constructor() { }
+
+  public credentials = {
+    name: '',
+    price: '',
+    imageUrl: '',
+    description: ''
+  }
+
+  constructor(public dataService: DataService) { }
 
   ngOnInit(): void {
   }
 
+  createOrUpdateEquipment() {
+    return this.dataService.createOrUpdateEquipment(this.credentials);
+  }
 }

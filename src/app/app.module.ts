@@ -36,6 +36,12 @@ import { MatListModule } from "@angular/material/list";
 import { AddMedicineComponent } from './components/add-medicine/add-medicine.component';
 import { AddEquipmentComponent } from './components/add-equipment/add-equipment.component';
 import { OrdersPanelComponent } from './components/orders-panel/orders-panel.component';
+import { MatSelectModule } from "@angular/material/select";
+import { MatDividerModule } from "@angular/material/divider";
+import { MedicinesPanelComponent } from './components/medicines-panel/medicines-panel.component';
+import { PasswordDialogComponent } from './components/dialogs/password-dialog/password-dialog.component';
+import { MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule } from "@angular/material/dialog";
+import {MatInputModule} from "@angular/material/input";
 
 declare module "@angular/core" {
   interface ModuleWithProviders<T = any> {
@@ -65,7 +71,9 @@ declare module "@angular/core" {
     ControlPanelComponent,
     AddMedicineComponent,
     AddEquipmentComponent,
-    OrdersPanelComponent
+    OrdersPanelComponent,
+    MedicinesPanelComponent,
+    PasswordDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -78,13 +86,21 @@ declare module "@angular/core" {
     MatIconModule,
     MatMenuModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatSelectModule,
+    MatDividerModule,
+    MatDialogModule,
+    MatInputModule
+  ],
+  entryComponents: [
+    PasswordDialogComponent
   ],
   providers: [
     DataService,
     AuthService,
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
-    AuthGuard
+    AuthGuard,
+    { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false} }
   ],
   bootstrap: [AppComponent]
 })

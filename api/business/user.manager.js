@@ -7,7 +7,6 @@ import applicationException from '../service/applicationException';
 import bcrypt from 'bcrypt';
 
 function create(context) {
-
   function hashPassword(password) {
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(password, salt);
@@ -27,6 +26,17 @@ function create(context) {
     await PasswordDAO.authorize(user.id, password);
     const token = await TokenDAO.create(userData);
     return getToken(token);
+  }
+
+  async function checkPassword(name, password) {
+    const user = await UserDAO.getByEmailOrPESEL(name);
+    if (!user) {
+      throw applicationException.new(applicationException.UNAUTHORIZED, 'User with that email does not exist');
+    }
+    if (!user.active) {
+      throw applicationException.new(applicationException.NOT_FOUND, 'User does not exist or does not active');
+    }
+    return await PasswordDAO.authorize(user.id, password);
   }
 
   function getToken(token) {
@@ -57,6 +67,7 @@ function create(context) {
 
   return {
     authenticate: authenticate,
+    checkPassword: checkPassword,
     getUserByToken: getUserByToken,
     createNewOrUpdate: createNewOrUpdate,
     removeUserById: removeUserById,
