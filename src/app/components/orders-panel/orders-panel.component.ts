@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { OrderService } from "../../services/order/order.service";
+import { MatDialog } from "@angular/material/dialog";
+import { PasswordDialogComponent } from "../dialogs/password-dialog/password-dialog.component";
+import { AuthService } from "../../services/auth/auth.service";
 
 @Component({
   selector: 'orders-panel',
@@ -7,9 +11,49 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrdersPanelComponent implements OnInit {
 
-  constructor() { }
+  public items$: any;
+  public password: '';
+  public response;
 
-  ngOnInit(): void {
+  public credentials = {
+    loginName: '',
+    password: ''
   }
 
+  constructor(public orderService: OrderService, public dialog: MatDialog, public authService: AuthService) { }
+
+  ngOnInit(): void {
+    this.getOrders();
+  }
+
+  openDialog(id): void {
+    const dialogRef = this.dialog.open(PasswordDialogComponent, {
+      data: { password: this.password }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.password = result;
+      if(this.password) {
+        this.credentials.loginName = this.getEmail();
+        this.credentials.password = this.password;
+        this.authService.passwordCheck(this.credentials).subscribe( response => {
+          this.response = response;
+        });
+        if(this.response) {
+          return this.orderService.deleteOrder(id);
+        }
+      }
+    });
+  }
+
+  getOrders() {
+    return this.orderService.getOrders().subscribe(response => {
+      this.items$ = response;
+      console.log(this.items$);
+    });
+  }
+
+  getEmail() {
+    return this.authService.getEmail();
+  }
 }

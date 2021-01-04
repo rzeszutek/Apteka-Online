@@ -27,4 +27,12 @@ export class DataService {
   getPrescription(PESEL, code) {
     return this.http.get(this.url + '/api/prescription',  {params: {PESEL, code}});
   }
+
+  createOrUpdateMedicine(credentials) {
+    return this.http.post(this.url + '/api/medicine/create', credentials);
+  }
+
+  createOrUpdateEquipment(credentials) {
+    return this.http.post(this.url + '/api/equipment/create', credentials);
+  }
 }

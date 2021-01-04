@@ -1,9 +1,12 @@
 .container {
   display: inline-block;
+  max-width: 100%;
+  width: 100%;
+  overflow-x: hidden;
 }
 
-.example-container {
-  height: 900px;
+.content-container {
+  margin-bottom: 5%;
 }
 
 mat-nav-list {
@@ -22,4 +25,9 @@ mat-list-item {
   display: flex;
   justify-content: center;
   margin-top: 5%;
+}
+
+.mat-drawer-content {
+  padding-top: 2%;
+  width: 100%;
 }

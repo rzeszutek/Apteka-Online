@@ -3,13 +3,14 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {JwtHelper} from 'angular2-jwt';
 import {map} from 'rxjs/operators';
 import {Token} from '../../models/token';
+import {Router} from "@angular/router";
 
 @Injectable()
 export class AuthService {
 
   private url = 'http://localhost:3000';
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, public router: Router) {
   }
 
   authenticate(credentials) {
@@ -25,6 +26,10 @@ export class AuthService {
         return false;
       })
     );
+  }
+
+  passwordCheck(credentials) {
+    return this.http.post(this.url + '/api/user/passwordCheck', credentials);
   }
 
   createOrUpdate(credentials) {
@@ -44,6 +49,7 @@ export class AuthService {
   logout() {
     return this.http.delete(this.url + '/api/user/logout/' + this.currentUser.userId).subscribe( () => {
       localStorage.removeItem('token');
+      this.router.navigate(['/home']);
     });
   }
 

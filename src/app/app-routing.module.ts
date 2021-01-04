@@ -18,6 +18,7 @@ import {ControlPanelComponent} from "./components/control-panel/control-panel.co
 import {AddMedicineComponent} from "./components/add-medicine/add-medicine.component";
 import {AddEquipmentComponent} from "./components/add-equipment/add-equipment.component";
 import {OrdersPanelComponent} from "./components/orders-panel/orders-panel.component";
+import {MedicinesPanelComponent} from "./components/medicines-panel/medicines-panel.component";
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home'},
@@ -37,7 +38,8 @@ const routes: Routes = [
   { path: 'control-panel', component: ControlPanelComponent, children: [
       { path: 'add-medicine', component: AddMedicineComponent, outlet: 'medicine-outlet' },
       { path: 'add-equipment', component: AddEquipmentComponent, outlet: 'equipment-outlet' },
-      { path: 'orders-panel', component: OrdersPanelComponent, outlet: 'orders-panel-outlet' }
+      { path: 'orders-panel', component: OrdersPanelComponent, outlet: 'orders-panel-outlet' },
+      { path: 'medicines-panel', component: MedicinesPanelComponent, outlet: 'medicines-panel-outlet' }
     ]}
 ];
 

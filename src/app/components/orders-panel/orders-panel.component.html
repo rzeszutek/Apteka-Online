@@ -1,1 +1,33 @@
-<p>orders-panel works!</p>
+<div class="container">
+  <div>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Wpisz ID zamówienia lub ID użytkownika" aria-label="Search">
+      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Szukaj</button>
+    </form>
+  </div>
+  <mat-list>
+    <mat-list-item  *ngFor="let item of items$">
+      <mat-card>
+        <div class="order-id">
+          <label>ID Zamówienia</label>
+          <div class="icons-container">
+            <p class="badge badge-primary badge-pill" style="margin-left: 20px;">{{item.id}}</p>
+            <button mat-mini-fab color="grey" style="margin-left: 20px; outline: none">
+              <mat-icon>build</mat-icon>
+            </button>
+            <button (click)="openDialog(item.id)" mat-mini-fab color="warn" style="margin-left: 20px; outline: none;">
+              <mat-icon>close</mat-icon>
+            </button>
+          </div>
+        </div>
+        <hr class="solid">
+        <div class="order-container">
+          <label>ID Użytkownika: <b>{{item.userId}}</b></label>
+        </div>
+        <div>
+          <label>Cena: <b>{{item.price}} zł</b></label>
+        </div>
+      </mat-card>
+    </mat-list-item>
+  </mat-list>
+</div>

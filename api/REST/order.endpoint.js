@@ -32,6 +32,15 @@ const orderEndpoint = (router) => {
       applicationException.errorHandler(error, response);
     }
   })
+
+  router.delete('/api/order/delete/:id', async (request, response, next) => {
+    try {
+      let result = await business(request).getUserManager(request).removeUserById(request.params.id);
+      response.status(200).send('Order with id: ' + result + ' deleted.');
+    } catch (error) {
+      applicationException.errorHandler(error, response);
+    }
+  })
 };
 
 export default orderEndpoint;
