@@ -42,6 +42,9 @@ import { MedicinesPanelComponent } from './components/medicines-panel/medicines-
 import { PasswordDialogComponent } from './components/dialogs/password-dialog/password-dialog.component';
 import { MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule } from "@angular/material/dialog";
 import {MatInputModule} from "@angular/material/input";
+import {MatTooltipModule} from "@angular/material/tooltip";
+import { UpdateMedicineComponent } from './components/update-medicine/update-medicine.component';
+import {MatExpansionModule} from "@angular/material/expansion";
 
 declare module "@angular/core" {
   interface ModuleWithProviders<T = any> {
@@ -73,7 +76,8 @@ declare module "@angular/core" {
     AddEquipmentComponent,
     OrdersPanelComponent,
     MedicinesPanelComponent,
-    PasswordDialogComponent
+    PasswordDialogComponent,
+    UpdateMedicineComponent
   ],
   imports: [
     BrowserModule,
@@ -90,7 +94,9 @@ declare module "@angular/core" {
     MatSelectModule,
     MatDividerModule,
     MatDialogModule,
-    MatInputModule
+    MatInputModule,
+    MatTooltipModule,
+    MatExpansionModule
   ],
   entryComponents: [
     PasswordDialogComponent

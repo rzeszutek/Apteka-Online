@@ -1,0 +1,48 @@
+.container {
+}
+
+mat-card {
+  width: 80%;
+  margin-top: 2%;
+}
+
+.order-id {
+  display: flex;
+  justify-content: space-between;
+}
+
+.order-content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5%;
+}
+
+.description {
+  margin-top: 4%;
+  font-size: 100%;
+}
+
+.icons-container {
+  display: flow-root;
+}
+
+
+.form-inline {
+  padding: 5%;
+  display: flex;
+  justify-content: center;
+  width: 80%;
+}
+
+.form-inline .form-control {
+  width: 70%;
+}
+
+.form-inline .btn {
+  width: 9%;
+}
+
+img {
+  width: 250px;
+  height: 250px;
+}

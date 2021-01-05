@@ -1,0 +1,124 @@
+<div class="container">
+  <div class="item">
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Nazwa
+          </mat-panel-title>
+          <mat-panel-description>
+
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <form>
+          <mat-form-field class="example-full-width">
+            <mat-label>Wprowadź nową nazwę</mat-label>
+            <input matInput [(ngModel)]="name" name="name" for="name">
+          </mat-form-field>
+          <button (click)="updateMedicine({id: items$.id, name: name})" type="submit" class="btn btn-primary btn-sm">Aktualizuj</button>
+        </form>
+      </mat-expansion-panel>
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false">
+      </mat-expansion-panel>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Cena
+          </mat-panel-title>
+          <mat-panel-description>
+
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <form id="price">
+          <mat-form-field class="example-full-width">
+            <mat-label>Wprowadź nową cenę</mat-label>
+            <input matInput [(ngModel)]="price" name="price" for="price">
+          </mat-form-field>
+          <button (click)="updateMedicine({id: items$.id, price: price})" class="btn btn-primary btn-sm">Aktualizuj</button>
+        </form>
+      </mat-expansion-panel>
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false">
+      </mat-expansion-panel>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Lek refundowany
+          </mat-panel-title>
+          <mat-panel-description>
+
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-form-field appearance="fill">
+          <mat-select [(ngModel)]="reimbursed" name="reimbursed" id="reimbursed">
+            <mat-option *ngFor="let option of optionsReimbursed" [value]="option.value">
+              {{option.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button (click)="updateMedicine({id: items$.id, reimbursed: reimbursed})" class="btn btn-primary btn-sm">Aktualizuj</button>
+      </mat-expansion-panel>
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false">
+      </mat-expansion-panel>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Lek na receptę
+          </mat-panel-title>
+          <mat-panel-description>
+
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-form-field appearance="fill">
+          <mat-select [(ngModel)]="prescription" name="prescription" id="prescription">
+            <mat-option *ngFor="let option of optionsPrescription" [value]="option.value" >
+              {{option.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button (click)="updateMedicine({id: items$.id, prescription: prescription})" class="btn btn-primary btn-sm">Aktualizuj</button>
+      </mat-expansion-panel>
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false">
+      </mat-expansion-panel>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Adres URL
+          </mat-panel-title>
+          <mat-panel-description>
+
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-form-field class="example-full-width">
+          <mat-label>Wprowadź adres URL</mat-label>
+          <input matInput [(ngModel)]="imageUrl">
+        </mat-form-field>
+        <button (click)="updateMedicine({id: items$.id, imageUrl: imageUrl})" class="btn btn-primary btn-sm">Aktualizuj</button>
+      </mat-expansion-panel>
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false">
+      </mat-expansion-panel>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Opis
+          </mat-panel-title>
+          <mat-panel-description>
+
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-form-field class="example-full-width">
+          <mat-label>Wprowadź nowy opis</mat-label>
+          <input matInput [(ngModel)]="description">
+        </mat-form-field>
+        <button (click)="updateMedicine({id: items$.id, description: description})" class="btn btn-primary btn-sm">Aktualizuj</button>
+      </mat-expansion-panel>
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false">
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</div>

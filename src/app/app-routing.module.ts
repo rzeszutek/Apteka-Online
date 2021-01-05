@@ -19,28 +19,30 @@ import {AddMedicineComponent} from "./components/add-medicine/add-medicine.compo
 import {AddEquipmentComponent} from "./components/add-equipment/add-equipment.component";
 import {OrdersPanelComponent} from "./components/orders-panel/orders-panel.component";
 import {MedicinesPanelComponent} from "./components/medicines-panel/medicines-panel.component";
+import {UpdateMedicineComponent} from "./components/update-medicine/update-medicine.component";
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'home'},
-  { path: 'home', component: HomeComponent},
-  { path: 'login', component: LoginComponent},
-  { path: 'signup', component: SignupComponent},
-  { path: 'medicine', component: MedicineComponent},
-  { path: 'medicine-item', component: MedicineItemComponent},
-  { path: 'medicine-item-details/:id', component: MedicineItemDetailsComponent},
-  { path: 'equipment', component: EquipmentComponent},
-  { path: 'equipment-item', component: EquipmentItemComponent},
-  { path: 'equipment-item-details/:id', component: EquipmentItemDetailsComponent},
-  { path: 'prescription', component: PrescriptionComponent},
-  { path: 'order', component: OrderComponent},
-  { path: 'order-item', component: OrderItemComponent},
-  { path: 'footer', component: FooterComponent},
+  { path: '', pathMatch: 'full', redirectTo: 'home' },
+  { path: 'home', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
+  { path: 'medicine', component: MedicineComponent },
+  { path: 'medicine-item', component: MedicineItemComponent },
+  { path: 'medicine-item-details/:id', component: MedicineItemDetailsComponent },
+  { path: 'equipment', component: EquipmentComponent },
+  { path: 'equipment-item', component: EquipmentItemComponent },
+  { path: 'equipment-item-details/:id', component: EquipmentItemDetailsComponent },
+  { path: 'prescription', component: PrescriptionComponent },
+  { path: 'order', component: OrderComponent },
+  { path: 'order-item', component: OrderItemComponent },
+  { path: 'footer', component: FooterComponent },
   { path: 'control-panel', component: ControlPanelComponent, children: [
       { path: 'add-medicine', component: AddMedicineComponent, outlet: 'medicine-outlet' },
       { path: 'add-equipment', component: AddEquipmentComponent, outlet: 'equipment-outlet' },
       { path: 'orders-panel', component: OrdersPanelComponent, outlet: 'orders-panel-outlet' },
       { path: 'medicines-panel', component: MedicinesPanelComponent, outlet: 'medicines-panel-outlet' }
-    ]}
+    ]},
+  { path: 'update-medicine/:id', component: UpdateMedicineComponent },
 ];
 
 @NgModule({

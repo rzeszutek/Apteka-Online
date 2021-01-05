@@ -36,7 +36,7 @@ const medicineEndpoint = (router) => {
   router.delete('/api/medicine/delete/:id', async (request, response, next) => {
     try {
       let result = await business(request).getMedicineManager(request).removeMedicineById(request.params.id);
-      response.status(200).send('User with id: ' + result + ' deleted.');
+      response.status(200).send('Medicine with id: ' + result + ' deleted.');
     } catch (error) {
       applicationException.errorHandler(error, response);
     }

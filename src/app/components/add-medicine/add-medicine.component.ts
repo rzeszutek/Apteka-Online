@@ -34,6 +34,8 @@ export class AddMedicineComponent implements OnInit {
   }
 
   createOrUpdateMedicine() {
-    return this.dataService.createOrUpdateMedicine(this.credentials);
+    return this.dataService.createOrUpdateMedicine(this.credentials).subscribe((result) => {
+      return result;
+    })
   }
 }

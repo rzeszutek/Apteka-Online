@@ -1,1 +1,42 @@
-<p>medicines-panel works!</p>
+<div class="container">
+  <div>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Wpisz ID lub nazwę leku" aria-label="Search">
+      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Szukaj</button>
+    </form>
+  </div>
+  <mat-list>
+    <div *ngFor="let item of items$">
+      <mat-card>
+        <div class="order-id">
+          <label>ID</label>
+          <div class="icons-container">
+            <p class="badge badge-primary badge-pill" style="margin-left: 20px;">{{item.id}}</p>
+            <button [routerLink]="['/update-medicine', item.id]" matTooltip="Aktualizuj lek" mat-mini-fab color="grey" style="margin-left: 20px; outline: none">
+              <mat-icon>build</mat-icon>
+            </button>
+            <button (click)="deleteMedicine(item.id)" matTooltip="Usuń lek" mat-mini-fab color="warn" style="margin-left: 20px; outline: none;">
+              <mat-icon>close</mat-icon>
+            </button>
+          </div>
+        </div>
+        <mat-divider style="margin-top: 2%;"></mat-divider>
+        <div class="order-content">
+          <img style="padding: 3%;" [src]="item.imageUrl">
+          <div>
+            <div style="display: flex; justify-content: space-between;">
+              <label><b>Nazwa</b></label>
+              <p>{{item.name}}</p>
+              <label><b>Cena</b></label>
+              <p>{{item.price}} zł</p>
+            </div>
+            <div class="description">
+              <label><b>Cena</b></label>
+              <p>{{item.description}}</p>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </mat-list>
+</div>
