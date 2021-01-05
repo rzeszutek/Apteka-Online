@@ -6,10 +6,10 @@
     </form>
   </div>
   <mat-list>
-    <mat-list-item  *ngFor="let item of items$">
+    <div *ngFor="let item of items$">
       <mat-card>
         <div class="order-id">
-          <label>ID Zamówienia</label>
+          <label>ID</label>
           <div class="icons-container">
             <p class="badge badge-primary badge-pill" style="margin-left: 20px;">{{item.id}}</p>
             <button mat-mini-fab color="grey" style="margin-left: 20px; outline: none">
@@ -28,6 +28,6 @@
           <label>Cena: <b>{{item.price}} zł</b></label>
         </div>
       </mat-card>
-    </mat-list-item>
+    </div>
   </mat-list>
 </div>

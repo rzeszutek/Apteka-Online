@@ -29,10 +29,14 @@ export class DataService {
   }
 
   createOrUpdateMedicine(credentials) {
-    return this.http.post(this.url + '/api/medicine/create', credentials);
+    return this.http.post(this.url + '/api/medicine/create', credentials)
   }
 
   createOrUpdateEquipment(credentials) {
     return this.http.post(this.url + '/api/equipment/create', credentials);
+  }
+
+  deleteMedicine(id) {
+    return this.http.delete(this.url + '/api/medicine/delete/' + id, { responseType: 'text'});
   }
 }

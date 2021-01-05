@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {CartService} from "../../services/cart/cart.service";
-import {OrderService} from "../../services/order/order.service";
-import {Router} from "@angular/router";
+import { CartService } from "../../services/cart/cart.service";
+import { OrderService } from "../../services/order/order.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'order',
@@ -58,6 +58,7 @@ export class OrderComponent implements OnInit {
     this.orderService.createOrUpdate(this.credentials).subscribe((result) => {
       return result;
     });
+    this.cartService.clearCarts();
     this.router.navigate(['/home']);
   }
 }
