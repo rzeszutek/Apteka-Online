@@ -33,6 +33,6 @@ export class OrderService {
   }
 
   deleteOrder(id) {
-    return this.http.delete(this.url + '/api/order/delete/' + id);
+    return this.http.delete(this.url + '/api/order/delete/' + id, { responseType: 'text'});
   }
 }

@@ -20,6 +20,9 @@ import {AddEquipmentComponent} from "./components/add-equipment/add-equipment.co
 import {OrdersPanelComponent} from "./components/orders-panel/orders-panel.component";
 import {MedicinesPanelComponent} from "./components/medicines-panel/medicines-panel.component";
 import {UpdateMedicineComponent} from "./components/update-medicine/update-medicine.component";
+import {EquipmentPanelComponent} from "./components/equipment-panel/equipment-panel.component";
+import {UpdateEquipmentComponent} from "./components/update-equipment/update-equipment.component";
+import {UserSettingsComponent} from "./components/user-settings/user-settings.component";
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -40,9 +43,12 @@ const routes: Routes = [
       { path: 'add-medicine', component: AddMedicineComponent, outlet: 'medicine-outlet' },
       { path: 'add-equipment', component: AddEquipmentComponent, outlet: 'equipment-outlet' },
       { path: 'orders-panel', component: OrdersPanelComponent, outlet: 'orders-panel-outlet' },
-      { path: 'medicines-panel', component: MedicinesPanelComponent, outlet: 'medicines-panel-outlet' }
+      { path: 'medicines-panel', component: MedicinesPanelComponent, outlet: 'medicines-panel-outlet' },
+      { path: 'equipment-panel', component: EquipmentPanelComponent, outlet: 'equipment-panel-outlet' },
     ]},
   { path: 'update-medicine/:id', component: UpdateMedicineComponent },
+  { path: 'update-equipment/:id', component: UpdateEquipmentComponent },
+  { path: 'user-settings', component: UserSettingsComponent },
 ];
 
 @NgModule({

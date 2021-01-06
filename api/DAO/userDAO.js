@@ -51,7 +51,7 @@ function createNewOrUpdate(user) {
   });
 }
 
-async function getByEmailOrPESEL(name) {
+async function getByEmail(name) {
   const result = await UserModel.findOne({ loginName: name });
   if (result) {
     return mongoConverter(result);
@@ -73,7 +73,7 @@ async function removeById(id) {
 
 export default {
   createNewOrUpdate: createNewOrUpdate,
-  getByEmailOrPESEL: getByEmailOrPESEL,
+  getByEmail: getByEmail,
   get: get,
   removeById: removeById,
   userRole: userRole,

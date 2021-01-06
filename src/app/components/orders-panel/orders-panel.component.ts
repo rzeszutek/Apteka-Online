@@ -38,10 +38,11 @@ export class OrdersPanelComponent implements OnInit {
         this.credentials.password = this.password;
         this.authService.passwordCheck(this.credentials).subscribe( response => {
           this.response = response;
+          console.log(this.response);
+          if(this.response) {
+            this.deleteOrder(id);
+          }
         });
-        if(this.response) {
-          return this.orderService.deleteOrder(id);
-        }
       }
     });
   }
@@ -51,6 +52,13 @@ export class OrdersPanelComponent implements OnInit {
       this.items$ = response;
       console.log(this.items$);
     });
+  }
+
+  deleteOrder(id) {
+    return this.orderService.deleteOrder(id).subscribe( () => {
+      console.log('pomocy');
+      this.getOrders();
+    })
   }
 
   getEmail() {

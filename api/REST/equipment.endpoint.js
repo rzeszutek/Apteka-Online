@@ -23,6 +23,24 @@ const equipmentEndpoint = (router) => {
       applicationException.errorHandler(error, response);
     }
   })
+
+  router.post('/api/equipment/create', async (request, response, next) => {
+    try {
+      let result = await business(request).getEquipmentManager(request).createNewOrUpdate(request.body);
+      response.status(200).send(result);
+    } catch (error) {
+      applicationException.errorHandler(error, response);
+    }
+  });
+
+  router.delete('/api/equipment/delete/:id', async (request, response, next) => {
+    try {
+      let result = await business(request).getEquipmentManager(request).removeEquipmentById(request.params.id);
+      response.status(200).send('Equipment with id: ' + result + ' deleted.');
+    } catch (error) {
+      applicationException.errorHandler(error, response);
+    }
+  })
 };
 
 export default equipmentEndpoint;

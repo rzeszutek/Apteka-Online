@@ -36,6 +36,10 @@ export class AuthService {
     return this.http.post(this.url + '/api/user/create', credentials);
   }
 
+  getId(loginName) {
+    return this.http.get(this.url + '/api/user/' + loginName);
+  }
+
   getEmail() {
     return this.currentUser.name;
   }
