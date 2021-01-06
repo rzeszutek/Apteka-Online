@@ -39,4 +39,8 @@ export class DataService {
   deleteMedicine(id) {
     return this.http.delete(this.url + '/api/medicine/delete/' + id, { responseType: 'text'});
   }
+
+  deleteEquipment(id) {
+    return this.http.delete(this.url + '/api/equipment/delete/' + id, { responseType: 'text'});
+  }
 }

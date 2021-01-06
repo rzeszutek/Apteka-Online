@@ -41,10 +41,14 @@ import { MatDividerModule } from "@angular/material/divider";
 import { MedicinesPanelComponent } from './components/medicines-panel/medicines-panel.component';
 import { PasswordDialogComponent } from './components/dialogs/password-dialog/password-dialog.component';
 import { MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule } from "@angular/material/dialog";
-import {MatInputModule} from "@angular/material/input";
-import {MatTooltipModule} from "@angular/material/tooltip";
+import { MatInputModule } from "@angular/material/input";
+import { MatTooltipModule } from "@angular/material/tooltip";
 import { UpdateMedicineComponent } from './components/update-medicine/update-medicine.component';
-import {MatExpansionModule} from "@angular/material/expansion";
+import { MatExpansionModule } from "@angular/material/expansion";
+import { EquipmentPanelComponent } from './components/equipment-panel/equipment-panel.component';
+import { UpdateEquipmentComponent } from './components/update-equipment/update-equipment.component';
+import { UserSettingsComponent } from './components/user-settings/user-settings.component';
+import { ConfirmationDialogComponent } from './components/dialogs/confirmation-dialog/confirmation-dialog.component';
 
 declare module "@angular/core" {
   interface ModuleWithProviders<T = any> {
@@ -77,7 +81,11 @@ declare module "@angular/core" {
     OrdersPanelComponent,
     MedicinesPanelComponent,
     PasswordDialogComponent,
-    UpdateMedicineComponent
+    UpdateMedicineComponent,
+    EquipmentPanelComponent,
+    UpdateEquipmentComponent,
+    UserSettingsComponent,
+    ConfirmationDialogComponent
   ],
   imports: [
     BrowserModule,

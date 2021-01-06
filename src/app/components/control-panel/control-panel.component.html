@@ -7,8 +7,9 @@
         <a mat-list-item (click)="router('medicine')"> Dodaj lek </a>
         <a mat-list-item (click)="router('equipment')"> Dodaj sprzęt </a>
         <a mat-list-item (click)="router('orders')"> Zamówienia </a>
-        <a mat-list-item (click)="router('medicines')"> Baza leków </a>
-        <p style="margin-top: 10%; font-size: 110%; font-weight: bold;">Panel zarządzania</p>
+        <a mat-list-item (click)="router('medicines-db')"> Baza leków </a>
+        <a mat-list-item (click)="router('equipment-db')"> Baza sprzętu </a>
+        <p style="margin-top: 10%; font-size: 110%; font-weight: bold;">Użytkownicy</p>
         <mat-divider style="margin-bottom: 5%;"></mat-divider>
       </mat-nav-list>
     </mat-drawer>
@@ -16,7 +17,8 @@
       <router-outlet *ngIf="check('medicine')" name="medicine-outlet"></router-outlet>
       <router-outlet *ngIf="check('equipment')" name="equipment-outlet"></router-outlet>
       <router-outlet *ngIf="check('orders')" name="orders-panel-outlet"></router-outlet>
-      <router-outlet *ngIf="check('medicines')" name="medicines-panel-outlet"></router-outlet>
+      <router-outlet *ngIf="check('medicines-db')" name="medicines-panel-outlet"></router-outlet>
+      <router-outlet *ngIf="check('equipment-db')" name="equipment-panel-outlet"></router-outlet>
     </mat-drawer-content>
   </mat-drawer-container>
 </div>

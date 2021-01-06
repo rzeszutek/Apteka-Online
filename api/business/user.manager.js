@@ -5,6 +5,7 @@ import TokenDAO from '../DAO/tokenDAO';
 import UserDAO from '../DAO/userDAO';
 import applicationException from '../service/applicationException';
 import bcrypt from 'bcrypt';
+import medicineDAO from "../DAO/medicineDAO";
 
 function create(context) {
   function hashPassword(password) {
@@ -15,7 +16,7 @@ function create(context) {
 
   async function authenticate(name, password) {
     let userData;
-    const user = await UserDAO.getByEmailOrPESEL(name);
+    const user = await UserDAO.getByEmail(name);
     if (!user) {
       throw applicationException.new(applicationException.UNAUTHORIZED, 'User with that email does not exist');
     }
@@ -29,7 +30,7 @@ function create(context) {
   }
 
   async function checkPassword(name, password) {
-    const user = await UserDAO.getByEmailOrPESEL(name);
+    const user = await UserDAO.getByEmail(name);
     if (!user) {
       throw applicationException.new(applicationException.UNAUTHORIZED, 'User with that email does not exist');
     }
@@ -57,6 +58,13 @@ function create(context) {
     }
   }
 
+  async function getByEmail(loginName) {
+    let result = await UserDAO.getByEmail(loginName);
+    if (result) {
+      return result;
+    }
+  }
+
   async function removeUserById(id) {
     return await UserDAO.removeById(id);
   }
@@ -68,6 +76,7 @@ function create(context) {
   return {
     authenticate: authenticate,
     checkPassword: checkPassword,
+    getByEmail: getByEmail,
     getUserByToken: getUserByToken,
     createNewOrUpdate: createNewOrUpdate,
     removeUserById: removeUserById,

@@ -12,10 +12,10 @@
           <label>ID</label>
           <div class="icons-container">
             <p class="badge badge-primary badge-pill" style="margin-left: 20px;">{{item.id}}</p>
-            <button [routerLink]="['/update-medicine', item.id]" matTooltip="Aktualizuj lek" mat-mini-fab color="grey" style="margin-left: 20px; outline: none">
+            <button [routerLink]="['/update-equipment', item.id]" matTooltip="Aktualizuj sprzęt" mat-mini-fab color="grey" style="margin-left: 20px; outline: none">
               <mat-icon>build</mat-icon>
             </button>
-            <button (click)="openDialogDelete(item.id)" matTooltip="Usuń lek" mat-mini-fab color="warn" style="margin-left: 20px; outline: none;">
+            <button (click)="openDialogDelete(item.id)" matTooltip="Usuń sprzęt" mat-mini-fab color="warn" style="margin-left: 20px; outline: none;">
               <mat-icon>close</mat-icon>
             </button>
           </div>

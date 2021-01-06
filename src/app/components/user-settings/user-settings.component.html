@@ -1,0 +1,127 @@
+<div class="container">
+  <mat-drawer-container class="content-container">
+    <mat-drawer style="width: 10%;" mode="side" opened>
+      <mat-nav-list>
+        <p style="margin-top: 5%; font-size: 110%; font-weight: bold;">Ustawienia</p>
+        <mat-divider style="margin-bottom: 5%;"></mat-divider>
+        <a mat-list-item (click)="router('user-data')"> Dane użytkownika </a>
+        <a mat-list-item (click)="router('user-security')"> Bezpieczeństwo </a>
+      </mat-nav-list>
+    </mat-drawer>
+    <mat-drawer-content>
+      <div *ngIf="check('user-data')" class="user" style="overflow-y: hidden;">
+        <div class="container">
+          <h1 style="text-align: center; width: 70%; margin-bottom: 5%;">Aktualizuj dane</h1>
+          <div class="item">
+            <mat-accordion>
+              <mat-expansion-panel hideToggle>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Email
+                  </mat-panel-title>
+                  <mat-panel-description>
+
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <form>
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Wprowadź email</mat-label>
+                    <input matInput [(ngModel)]="loginName" name="name" for="name">
+                  </mat-form-field>
+                  <button (click)="updateUser({id: id, loginName: loginName})" type="submit" class="btn btn-primary btn-sm">Aktualizuj</button>
+                </form>
+              </mat-expansion-panel>
+              <mat-expansion-panel (opened)="panelOpenState = true"
+                                   (closed)="panelOpenState = false">
+              </mat-expansion-panel>
+              <mat-expansion-panel hideToggle>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Imię
+                  </mat-panel-title>
+                  <mat-panel-description>
+
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <form id="price">
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Wprowadź imię</mat-label>
+                    <input matInput [(ngModel)]="name" name="price" for="price">
+                  </mat-form-field>
+                  <button (click)="updateUser({id: id, name: name})" class="btn btn-primary btn-sm">Aktualizuj</button>
+                </form>
+              </mat-expansion-panel>
+              <mat-expansion-panel (opened)="panelOpenState = true"
+                                   (closed)="panelOpenState = false">
+              </mat-expansion-panel>
+              <mat-expansion-panel hideToggle>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Nazwisko
+                  </mat-panel-title>
+                  <mat-panel-description>
+
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Wprowadź nazwisko</mat-label>
+                  <input matInput [(ngModel)]="surname">
+                </mat-form-field>
+                <button (click)="updateUser({id: id, surname: surname})" class="btn btn-primary btn-sm">Aktualizuj</button>
+              </mat-expansion-panel>
+              <mat-expansion-panel (opened)="panelOpenState = true"
+                                   (closed)="panelOpenState = false">
+              </mat-expansion-panel>
+              <mat-expansion-panel hideToggle>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Wprowadź numer telefonu
+                  </mat-panel-title>
+                  <mat-panel-description>
+
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <mat-form-field class="example-full-width">
+                  <mat-label>Wprowadź numer</mat-label>
+                  <input matInput [(ngModel)]="phone">
+                </mat-form-field>
+                <button (click)="updateUser({id: id, phone: phone})" class="btn btn-primary btn-sm">Aktualizuj</button>
+              </mat-expansion-panel>
+              <mat-expansion-panel (opened)="panelOpenState = true"
+                                   (closed)="panelOpenState = false">
+              </mat-expansion-panel>
+            </mat-accordion>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="check('user-security')" class="user">
+        <div class="password-change">
+          <h1 style="text-align: center; width: 70%;">Zmiana hasła</h1>
+          <div>
+            <mat-form-field class="password-form-field">
+              <mat-label>Wprowadź stare hasło</mat-label>
+              <input matInput [(ngModel)]="credentials.password" type="password">
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field class="password-form-field">
+              <mat-label>Wprowadź nowe hasło</mat-label>
+              <input matInput [(ngModel)]="password" type="password">
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field class="password-form-field">
+              <mat-label>Wprowadź nowe hasło ponownie</mat-label>
+              <input matInput [(ngModel)]="passwordRepeated" type="password">
+            </mat-form-field>
+          </div>
+          <div class="confirm-button">
+            <button (click)="updatePassword({id: this.id, password: this.password})" class="btn btn-primary btn-sm" style="width: 100px; height: 40px; margin-top: 2%;">
+              Aktualizuj</button>
+          </div>
+        </div>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>
+

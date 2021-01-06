@@ -43,6 +43,24 @@ const userEndpoint = (router) => {
     }
   });
 
+  // router.get('/api/user/:id', async (request, response, next) => {
+  //   try {
+  //     let result = await business(request).getUserManager(request).get(request.params.id);
+  //     response.status(200).send(result);
+  //   } catch (error) {
+  //     applicationException.errorHandler(error, response);
+  //   }
+  // });
+
+  router.get('/api/user/:loginName', async (request, response, next) => {
+    try {
+      let result = await business(request).getUserManager(request).getByEmail(request.params.loginName);
+      response.status(200).send(result);
+    } catch (error) {
+      applicationException.errorHandler(error, response);
+    }
+  });
+
   router.delete('/api/user/delete', async (request, response, next) => {
     try {
       let result = await business(request).getUserManager(request).removeUserById(request.body);

@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from "../../services/data/data.service";
-import { PasswordDialogComponent } from "../dialogs/password-dialog/password-dialog.component";
-import { MatDialog } from "@angular/material/dialog";
-import { AuthService }  from "../../services/auth/auth.service";
-import { Router } from "@angular/router";
+import {PasswordDialogComponent} from "../dialogs/password-dialog/password-dialog.component";
+import {DataService} from "../../services/data/data.service";
+import {MatDialog} from "@angular/material/dialog";
+import {AuthService} from "../../services/auth/auth.service";
+import {Router} from "@angular/router";
 
 @Component({
-  selector: 'medicines-panel',
-  templateUrl: './medicines-panel.component.html',
-  styleUrls: ['./medicines-panel.component.scss']
+  selector: 'app-equipment-panel',
+  templateUrl: './equipment-panel.component.html',
+  styleUrls: ['./equipment-panel.component.scss']
 })
-export class MedicinesPanelComponent implements OnInit {
+export class EquipmentPanelComponent implements OnInit {
 
   public items$: any;
   public password: '';
@@ -28,7 +28,7 @@ export class MedicinesPanelComponent implements OnInit {
   }
 
   getAll() {
-    this.dataService.getMedicines().subscribe(response => {
+    this.dataService.getEquipment().subscribe(response => {
       this.items$ = response;
     });
   }
@@ -43,18 +43,18 @@ export class MedicinesPanelComponent implements OnInit {
       if(this.password) {
         this.credentials.loginName = this.getEmail();
         this.credentials.password = this.password;
-        this.authService.passwordCheck(this.credentials).subscribe( response => {
+        this.authService.passwordCheck(this.credentials).subscribe(response => {
           this.response = response;
           if(this.response) {
-            this.deleteMedicine(id);
+            this.deleteEquipment(id);
           }
         });
       }
     });
   }
 
-  deleteMedicine(id) {
-    return this.dataService.deleteMedicine(id).subscribe( () => {
+  deleteEquipment(id) {
+    return this.dataService.deleteEquipment(id).subscribe( () => {
       this.getAll();
     })
   }
