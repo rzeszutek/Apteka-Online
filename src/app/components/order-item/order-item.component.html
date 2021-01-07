@@ -3,6 +3,15 @@
   <div class="item">
     <p class="count">{{quantity}}x</p>
     <p class="badge badge-primary badge-pill"><b>{{price}}</b></p>
+    <button (click)="addMedicineToCart({'id': id,'name': title, 'price': price, 'quantity': 1})" mat-mini-fab color="" style="margin-right: 20px; outline: none;">
+      <mat-icon>add</mat-icon>
+    </button>
+    <button (click)="removeMedicineFromCart(id)" mat-mini-fab color="" style="margin-right: 20px; outline: none;">
+      <mat-icon>remove</mat-icon>
+    </button>
+    <button (click)="removeMedicine(id)" mat-mini-fab color="warn" style="margin-right: 35px; outline: none;">
+      <mat-icon>close</mat-icon>
+    </button>
   </div>
 </div>
 

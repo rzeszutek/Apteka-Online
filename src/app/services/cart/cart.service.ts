@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -25,25 +25,40 @@ export class CartService {
         break;
       }
     }
-
     if (!exists) {
       this.medicines.push(product);
     }
-
     console.log(this.getCart());
   }
 
   removeMedicineFromCart(id) {
     for (let i in this.medicines) {
       if (this.medicines[i].id == id) {
+        if (this.medicines[i].quantity > 1) {
           this.medicines[i].quantity--;
+          console.log(this.medicines);
+        }
         if (this.medicines[i].quantity == 0) {
           this.medicines = this.medicines.filter(item => item != this.medicines[i]);
+
         }
       }
     }
+  }
 
-    console.log(this.getCart());
+  removeMedicine(id) {
+    this.medicines.forEach( item => {
+      if (item.id == id) {
+        let index = this.medicines.indexOf(item);
+        let array1 = this.medicines.slice(0, index);
+        let array2 = this.medicines.slice(index+1, this.medicines.length);
+        this.medicines = [];
+        console.log(array1, array2);
+        this.medicines = this.medicines.concat(array1);
+        this.medicines = this.medicines.concat(array2);
+        console.log(this.medicines);
+      }
+    })
   }
 
   getMedicineItems() {
@@ -71,14 +86,31 @@ export class CartService {
   removeEquipmentFromCart(id) {
     for (let i in this.equipment) {
       if (this.equipment[i].id == id) {
-        this.equipment[i].quantity--;
+        if (this.equipment[i].quantity > 1) {
+          this.equipment[i].quantity--;
+          console.log(this.equipment);
+        }
         if (this.equipment[i].quantity == 0) {
           this.equipment = this.equipment.filter(item => item != this.equipment[i]);
         }
       }
     }
-
     console.log(this.getCart());
+  }
+
+  removeEquipment(id) {
+    this.equipment.forEach( item => {
+      if (item.id == id) {
+        let index = this.equipment.indexOf(item);
+        let array1 = this.equipment.slice(0, index);
+        let array2 = this.equipment.slice(index+1, this.equipment.length);
+        this.equipment = [];
+        console.log(array1, array2);
+        this.equipment = this.equipment.concat(array1);
+        this.equipment = this.equipment.concat(array2);
+        console.log(this.equipment);
+      }
+    })
   }
 
   getEquipmentItems() {
@@ -86,12 +118,10 @@ export class CartService {
   }
 
   getCart() {
-    let cart = {
+    return {
       'medicines': this.medicines,
       'equipment': this.equipment
     };
-
-    return cart;
   }
 
   getProductCount() {

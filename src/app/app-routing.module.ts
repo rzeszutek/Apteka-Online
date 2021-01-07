@@ -23,6 +23,7 @@ import {UpdateMedicineComponent} from "./components/update-medicine/update-medic
 import {EquipmentPanelComponent} from "./components/equipment-panel/equipment-panel.component";
 import {UpdateEquipmentComponent} from "./components/update-equipment/update-equipment.component";
 import {UserSettingsComponent} from "./components/user-settings/user-settings.component";
+import {BankTransferComponent} from "./components/bank-transfer/bank-transfer.component";
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -49,6 +50,7 @@ const routes: Routes = [
   { path: 'update-medicine/:id', component: UpdateMedicineComponent },
   { path: 'update-equipment/:id', component: UpdateEquipmentComponent },
   { path: 'user-settings', component: UserSettingsComponent },
+  { path: 'bank-transfer', component: BankTransferComponent },
 ];
 
 @NgModule({
