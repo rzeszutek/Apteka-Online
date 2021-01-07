@@ -49,6 +49,9 @@ import { EquipmentPanelComponent } from './components/equipment-panel/equipment-
 import { UpdateEquipmentComponent } from './components/update-equipment/update-equipment.component';
 import { UserSettingsComponent } from './components/user-settings/user-settings.component';
 import { ConfirmationDialogComponent } from './components/dialogs/confirmation-dialog/confirmation-dialog.component';
+import { MatRadioModule } from "@angular/material/radio";
+import { BankTransferComponent } from './components/bank-transfer/bank-transfer.component';
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 declare module "@angular/core" {
   interface ModuleWithProviders<T = any> {
@@ -85,7 +88,8 @@ declare module "@angular/core" {
     EquipmentPanelComponent,
     UpdateEquipmentComponent,
     UserSettingsComponent,
-    ConfirmationDialogComponent
+    ConfirmationDialogComponent,
+    BankTransferComponent
   ],
   imports: [
     BrowserModule,
@@ -104,7 +108,9 @@ declare module "@angular/core" {
     MatDialogModule,
     MatInputModule,
     MatTooltipModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatRadioModule,
+    MatProgressSpinnerModule
   ],
   entryComponents: [
     PasswordDialogComponent

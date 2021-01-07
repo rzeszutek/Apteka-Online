@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.input {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+button {
+  margin-left: 5%;
+  width: 100px;
+  height: 40px;
+}
+
+.spinner {
+  position: absolute;
+  background-color: black;
+  border-radius: 15px;
+  opacity: 50%;
+  top: 30%;
+  z-index: 999;
+}

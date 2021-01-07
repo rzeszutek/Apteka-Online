@@ -1,49 +1,97 @@
-<div class="order">
-  <ul class="list-group">
-    <li class="list-group-item" *ngFor="let item of items$">
-      <order-item [id]="item.id" [title]="item.name" [price]="item.price" [quantity]="item.quantity">
-      </order-item>
-    </li>
-  </ul>
-</div>
-<div class="sum">
-  <div class="card">
-    <div class="card-header">
-      <b>Łączna kwota:</b>
-      {{sum}} zł
+<div *ngIf="!ifEmpty()">
+  <div class="container">
+    <mat-list>
+      <div *ngFor="let medicine of medicines$">
+        <mat-card class="item">
+          <p><b>{{medicine.name}}</b></p>
+          <div class="item">
+            <p class="count">{{medicine.quantity}}x</p>
+            <p class="badge badge-primary badge-pill"><b>{{medicine.price}}</b></p>
+            <button (click)="addMedicineToCart({'id': medicine.id,'name': medicine.name, 'price': medicine.price, 'quantity': 1})" mat-mini-fab color="" style="margin-right: 20px; outline: none;">
+              <mat-icon>add</mat-icon>
+            </button>
+            <button (click)="removeMedicineFromCart(medicine.id)" mat-mini-fab color="" style="margin-right: 20px; outline: none;">
+              <mat-icon>remove</mat-icon>
+            </button>
+            <button (click)="removeMedicine(medicine.id)" mat-mini-fab color="warn" style="margin-right: 35px; outline: none;">
+              <mat-icon>close</mat-icon>
+            </button>
+          </div>
+        </mat-card>
+      </div>
+    </mat-list>
+    <mat-list>
+      <div *ngFor="let item of equipment$">
+        <mat-card class="item">
+          <p><b>{{item.name}}</b></p>
+          <div class="item">
+            <p class="count">{{item.quantity}}x</p>
+            <p class="badge badge-primary badge-pill"><b>{{item.price}}</b></p>
+            <button (click)="addEquipmentToCart({'id': item.id,'name': item.title, 'price': item.price, 'quantity': 1})" mat-mini-fab color="" style="margin-right: 20px; outline: none;">
+              <mat-icon>add</mat-icon>
+            </button>
+            <button (click)="removeEquipmentFromCart(item.id)" mat-mini-fab color="" style="margin-right: 20px; outline: none;">
+              <mat-icon>remove</mat-icon>
+            </button>
+            <button (click)="removeEquipment(item.id)" mat-mini-fab color="warn" style="margin-right: 35px; outline: none;">
+              <mat-icon>close</mat-icon>
+            </button>
+          </div>
+        </mat-card>
+      </div>
+    </mat-list>
+    <div class="spinner" *ngIf="showSpinner">
+      <mat-spinner></mat-spinner>
     </div>
   </div>
-</div>
-<form method="post">
+  <form method="post">
+    <div class="shipment" style="margin-top: 4%;">
+      <div class="form-check form-check-inline">
+        <input [(ngModel)]="credentials.shipment" class="form-check-input" type="radio" name="shipmentOptions" id="inlineRadio1" [value]="true">
+        <label class="form-check-label" for="inlineRadio1">Dostawa</label>
+      </div>
+      <div>
+        <input [(ngModel)]="credentials.shipment" class="form-check-input" type="radio" name="shipmentOptions" id="inlineRadio2" [value]="false">
+        <label class="form-check-label" for="inlineRadio2">Odbiór osobisty</label>
+      </div>
+    </div>
+    <div class="sum">
+      <div class="card">
+        <div *ngIf="credentials.shipment" class="card-header">
+          <b>Łączna kwota:</b>
+          {{finalPriceWithShipment}} zł
+        </div>
+        <div *ngIf="!credentials.shipment" class="card-header">
+          <b>Łączna kwota:</b>
+          {{finalPrice}} zł
+        </div>
+      </div>
+    </div>
+    <div class="address-label">
+      <label class="label" for="address">Adres</label>
+      <input [(ngModel)]="credentials.address" [disabled]="!credentials.shipment" name="address" type="text" id="address" placeholder="Wprowadź adres np. Tarnów, ul. Mickiewicza 56">
+    </div>
+    <div class="sum">
+      <div class="form-check form-check-inline">
+        <input [(ngModel)]="credentials.payment" class="form-check-input" type="radio" name="paymentOptions" id="inlineRadio3" value="Przy odbiorze">
+        <label class="form-check-label" for="inlineRadio3">Przy odbiorze</label>
+        <input [(ngModel)]="credentials.payment" class="form-check-input" type="radio" name="paymentOptions" id="inlineRadio4" value="Przelew">
+        <label class="form-check-label" for="inlineRadio4">Przelew</label>
+      </div>
+    </div>
+  </form>
   <div class="sum">
-    <div class="form-check form-check-inline">
-      <input [(ngModel)]="credentials.shipment" class="form-check-input" type="radio" name="shipmentOptions" id="inlineRadio1" value=true>
-      <label class="form-check-label" for="inlineRadio1">Dostawa</label>
-      <input [(ngModel)]="credentials.shipment" class="form-check-input" type="radio" name="shipmentOptions" id="inlineRadio2" value=false>
-      <label class="form-check-label" for="inlineRadio2">Odbiór osobisty</label>
+    <button (click)="create()" [disabled]="disabled()" type="submit" class="btn btn-primary">Dalej</button>
+    <button (click)="create()" [disabled]="!disabled()" type="submit" style="margin-left: 20px;" class="btn btn-primary">Kup</button>
+  </div>
+</div>
+<div *ngIf="ifEmpty()">
+  <div class="empty">
+    <img src="https://f.hubspotusercontent10.net/hub/491011/hubfs/LS%20Central%20for%20Pharmacy/Pharmacy-background-2.jpg?length=2000&name=Pharmacy-background-2.jpg"
+         width=100%>
+    <div class="text">
+      <h1>Twój koszyk jest pusty!</h1>
+      <a href="medicine"><button class="btn btn-primary" style="margin-top: 5%;">Powrót</button></a>
     </div>
   </div>
-<!--  <div class="sum">-->
-<!--    <button class="btn btn-primary btn-lg" data-target="div" type="button" data-toggle="collapse">Dostawa</button>-->
-<!--    <div class="collapse" id="div">-->
-<!--      <div class="card card-body">-->
-<!--        <p>WebSocket is closed before the connection is established.</p>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-  <div class="address-label">
-    <label class="label" for="address">Adres</label>
-    <input [(ngModel)]="credentials.address" name="address" type="text" id="address" placeholder="Wprowadź adres np. Tarnów, ul. Mickiewicza 56">
-  </div>
-  <div class="sum">
-    <div class="form-check form-check-inline">
-      <input [(ngModel)]="credentials.payment" class="form-check-input" type="radio" name="paymentOptions" id="inlineRadio3" value="Przy odbiorze">
-      <label class="form-check-label" for="inlineRadio3">Przy odbiorze</label>
-      <input [(ngModel)]="credentials.payment" class="form-check-input" type="radio" name="paymentOptions" id="inlineRadio4" value="Blik">
-      <label class="form-check-label" for="inlineRadio4">Blik</label>
-    </div>
-  </div>
-</form>
-<div class="sum">
-  <button (click)="create()" type="submit" class="btn btn-primary">Dalej</button>
 </div>

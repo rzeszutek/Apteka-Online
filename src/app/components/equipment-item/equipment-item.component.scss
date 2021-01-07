@@ -7,12 +7,11 @@
 }
 
 .buttons-container {
-  display: flex;
-  justify-content: space-between;
+  display: inline-block;
 }
 
 .btn.btn-outline-primary {
-  width: 40px;
+  margin-left: 20px;
 }
 
 output {
