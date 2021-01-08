@@ -7,6 +7,7 @@ import applicationException from '../service/applicationException';
 import mongoConverter from '../service/mongoConverter';
 import uniqueValidator from 'mongoose-unique-validator';
 
+
 const userRole = {
   admin: 'admin',
   user: 'user'
@@ -71,11 +72,16 @@ async function removeById(id) {
   return await UserModel.findByIdAndRemove(id);
 }
 
+async function sendEmail(email) {
+  return await UserModel.sendEmail(email);
+}
+
 export default {
   createNewOrUpdate: createNewOrUpdate,
   getByEmail: getByEmail,
   get: get,
   removeById: removeById,
+  sendEmail: sendEmail,
   userRole: userRole,
   model: UserModel
 };

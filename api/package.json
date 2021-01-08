@@ -23,6 +23,7 @@
     "moment": "^2.29.1",
     "mongoose": "^5.10.1",
     "mongoose-unique-validator": "^2.0.3",
+    "nodemailer": "^6.4.17",
     "nodemon": "^2.0.4",
     "sha1": "^1.1.1"
   },

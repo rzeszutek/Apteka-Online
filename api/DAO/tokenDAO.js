@@ -50,6 +50,32 @@ async function create(user) {
   throw applicationException.new(applicationException.BAD_REQUEST, error.message);
 }
 
+async function createPasswordReset(user) {
+  const access = 'auth';
+  const userData = {
+    userId: user.id,
+    name: user.loginName,
+    role: user.role,
+    access: access
+  };
+  const value = jwt.sign(
+    userData,
+    config.JwtSecret,
+    {
+      expiresIn: '10m'
+    });
+  const result = await TokenModel({
+    userId: user.id,
+    type: 'authorization',
+    value: value,
+    createDate: momentWrapper.get().valueOf()
+  }).save();
+  if (result) {
+    return mongoConverter(result);
+  }
+  throw applicationException.new(applicationException.BAD_REQUEST, error.message);
+}
+
 async function get(tokenValue) {
   const result = await TokenModel.findOne({ value: tokenValue });
   if (result) {
@@ -64,6 +90,7 @@ async function remove(userId) {
 
 export default {
   create: create,
+  createPasswordReset: createPasswordReset,
   get: get,
   remove: remove,
   tokenTypeEnum: tokenTypeEnum,

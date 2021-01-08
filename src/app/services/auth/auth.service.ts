@@ -32,12 +32,28 @@ export class AuthService {
     return this.http.post(this.url + '/api/user/passwordCheck', credentials);
   }
 
+  passwordReset(credentials, token) {
+    const jwtHelper = new JwtHelper();
+    if (!token) {
+      return false;
+    }
+    if (!(jwtHelper.isTokenExpired(token))) {
+      this.createOrUpdate(credentials).subscribe( () => {
+        console.log('ech');
+      });
+    }
+  }
+
   createOrUpdate(credentials) {
     return this.http.post(this.url + '/api/user/create', credentials);
   }
 
   getId(loginName) {
     return this.http.get(this.url + '/api/user/' + loginName);
+  }
+
+  sendEmail(credentials) {
+    return this.http.post(this.url + '/api/user/sendEmail', credentials);
   }
 
   getEmail() {
