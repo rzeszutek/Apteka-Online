@@ -29,7 +29,7 @@ export class DataService {
   }
 
   createOrUpdateMedicine(credentials) {
-    return this.http.post(this.url + '/api/medicine/create', credentials)
+    return this.http.post(this.url + '/api/medicine/create', credentials);
   }
 
   createOrUpdateEquipment(credentials) {

@@ -24,6 +24,8 @@ import {EquipmentPanelComponent} from "./components/equipment-panel/equipment-pa
 import {UpdateEquipmentComponent} from "./components/update-equipment/update-equipment.component";
 import {UserSettingsComponent} from "./components/user-settings/user-settings.component";
 import {BankTransferComponent} from "./components/bank-transfer/bank-transfer.component";
+import {PasswordResetComponent} from "./components/password-reset/password-reset.component";
+import {PasswordRestoreComponent} from "./components/password-restore/password-restore.component";
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -51,6 +53,8 @@ const routes: Routes = [
   { path: 'update-equipment/:id', component: UpdateEquipmentComponent },
   { path: 'user-settings', component: UserSettingsComponent },
   { path: 'bank-transfer', component: BankTransferComponent },
+  { path: 'password-reset/:token/:id', component: PasswordResetComponent },
+  { path: 'password-restore', component: PasswordRestoreComponent },
 ];
 
 @NgModule({

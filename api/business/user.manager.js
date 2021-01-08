@@ -6,6 +6,7 @@ import UserDAO from '../DAO/userDAO';
 import applicationException from '../service/applicationException';
 import bcrypt from 'bcrypt';
 import medicineDAO from "../DAO/medicineDAO";
+import nodemailer from 'nodemailer';
 
 function create(context) {
   function hashPassword(password) {
@@ -73,6 +74,42 @@ function create(context) {
     return await TokenDAO.remove(userId);
   }
 
+  async function sendEmail(email) {
+    let userData;
+    const user = await UserDAO.getByEmail(email);
+    if (!user) {
+      throw applicationException.new(applicationException.UNAUTHORIZED, 'User with that email does not exist');
+    }
+    if (!user.active) {
+      throw applicationException.new(applicationException.NOT_FOUND, 'User does not exist or does not active');
+    }
+    userData = await user;
+    const token = await TokenDAO.createPasswordReset(userData);
+
+    let transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: 'noreply.aptekaonline.rr@gmail.com',
+        pass: 'AptekaOnline#321'
+      }
+    });
+
+    let mailOptions = {
+      from: 'noreply.aptekaonline.rr@gmail.com',
+      to: email,
+      subject: 'Password Reset',
+      text: 'Kliknij w link, aby zresetować hasło: http://localhost:4200/password-reset/' + token.value + '/' + userData.id
+    };
+
+    await transporter.sendMail(mailOptions, function (error, info) {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log('Email sent: ' + info.response);
+      }
+    });
+  }
+
   return {
     authenticate: authenticate,
     checkPassword: checkPassword,
@@ -80,7 +117,8 @@ function create(context) {
     getUserByToken: getUserByToken,
     createNewOrUpdate: createNewOrUpdate,
     removeUserById: removeUserById,
-    removeHashSession: removeHashSession
+    removeHashSession: removeHashSession,
+    sendEmail: sendEmail
   };
 }
 

@@ -78,6 +78,15 @@ const userEndpoint = (router) => {
       applicationException.errorHandler(error, response);
     }
   });
+
+  router.post('/api/user/sendEmail', async (request, response, next) => {
+    try {
+      let result = await business(request).getUserManager(request).sendEmail(request.body.loginName);
+      response.status(200).send(result);
+    } catch (error) {
+      applicationException.errorHandler(error, response);
+    }
+  });
 };
 
 export default userEndpoint;
