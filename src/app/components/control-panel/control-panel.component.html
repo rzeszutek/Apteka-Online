@@ -2,14 +2,18 @@
   <mat-drawer-container class="content-container">
     <mat-drawer style="width: 10%;" mode="side" opened>
       <mat-nav-list>
-        <p style="margin-top: 5%; font-size: 110%; font-weight: bold;">Panel zarządzania</p>
-        <mat-divider style="margin-bottom: 5%;"></mat-divider>
-        <a mat-list-item (click)="router('medicine')"> Dodaj lek </a>
-        <a mat-list-item (click)="router('equipment')"> Dodaj sprzęt </a>
-        <a mat-list-item (click)="router('orders')"> Zamówienia </a>
-        <a mat-list-item (click)="router('medicines-db')"> Baza leków </a>
-        <a mat-list-item (click)="router('equipment-db')"> Baza sprzętu </a>
-        <p style="margin-top: 10%; font-size: 110%; font-weight: bold;">Użytkownicy</p>
+        <li>
+          <p style="margin-top: 5%; font-size: 110%; font-weight: bold;">Panel zarządzania</p>
+          <mat-divider style="margin-bottom: 5%;"></mat-divider>
+          <a mat-list-item (click)="router('medicine')"> Dodaj lek </a>
+          <a mat-list-item (click)="router('equipment')"> Dodaj sprzęt </a>
+          <a mat-list-item (click)="router('orders')"> Zamówienia </a>
+          <a mat-list-item (click)="router('medicines-db')"> Baza leków </a>
+          <a mat-list-item (click)="router('equipment-db')"> Baza sprzętu </a>
+          <p style="margin-top: 10%; font-size: 110%; font-weight: bold;">Użytkownicy</p>
+          <a mat-list-item (click)="router('user-db')"> Baza użytkowników </a>
+          <a mat-list-item (click)="router('user-forms')"> Formularze </a>
+        </li>
         <mat-divider style="margin-bottom: 5%;"></mat-divider>
       </mat-nav-list>
     </mat-drawer>
@@ -19,6 +23,8 @@
       <router-outlet *ngIf="check('orders')" name="orders-panel-outlet"></router-outlet>
       <router-outlet *ngIf="check('medicines-db')" name="medicines-panel-outlet"></router-outlet>
       <router-outlet *ngIf="check('equipment-db')" name="equipment-panel-outlet"></router-outlet>
+      <router-outlet *ngIf="check('user-db')" name="users-panel-outlet"></router-outlet>
+      <router-outlet *ngIf="check('user-forms')" name="user-forms-panel-outlet"></router-outlet>
     </mat-drawer-content>
   </mat-drawer-container>
 </div>
