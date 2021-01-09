@@ -2,8 +2,8 @@
   <div class="equipment-container">
     <div>
       <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="Wpisz wyszukiwaną frazę" aria-label="Search">
-        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Szukaj</button>
+        <input [(ngModel)]="phrase" name="search" class="form-control mr-sm-2" type="search" placeholder="Wpisz wyszukiwaną frazę" aria-label="Search">
+        <button (click)="findByPhrase(phrase)" class="btn btn-outline-primary my-2 my-sm-0" type="submit">Szukaj</button>
       </form>
     </div>
     <div class="row">

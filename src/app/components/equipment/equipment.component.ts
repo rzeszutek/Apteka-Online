@@ -9,6 +9,7 @@ import { DataService } from "../../services/data/data.service";
 export class EquipmentComponent implements OnInit {
 
   public items$: any;
+  public phrase: '';
 
   constructor(private dataService: DataService) { }
 
@@ -19,7 +20,13 @@ export class EquipmentComponent implements OnInit {
   getAll() {
     this.dataService.getEquipment().subscribe(response => {
       this.items$ = response;
-      //console.log(this.items$);
+    });
+  }
+
+  findByPhrase(phrase) {
+    this.dataService.getEquipment().subscribe(response => {
+      this.items$ = response;
+      this.items$ = this.items$.filter(item => item.name.toLowerCase().startsWith(phrase));
     });
   }
 }

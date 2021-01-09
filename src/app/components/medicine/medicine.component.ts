@@ -10,17 +10,25 @@ import { DataService } from "../../services/data/data.service";
 export class MedicineComponent implements OnInit {
 
   public items$: any;
+  public phrase: '';
 
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
-    this.getAll();
+   this.getAll();
   }
 
   getAll() {
-    this.dataService.getMedicines().subscribe(response => {
+     this.dataService.getMedicines().subscribe(response => {
       this.items$ = response;
       console.log(this.items$);
+    });
+  }
+
+  findByPhrase(phrase) {
+    this.dataService.getMedicines().subscribe(response => {
+      this.items$ = response;
+      this.items$ = this.items$.filter(item => item.name.toLowerCase().startsWith(phrase));
     });
   }
 }
