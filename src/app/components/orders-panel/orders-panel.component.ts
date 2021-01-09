@@ -14,6 +14,7 @@ export class OrdersPanelComponent implements OnInit {
   public items$: any;
   public password: '';
   public response;
+  public phrase: '';
 
   public credentials = {
     loginName: '',
@@ -59,6 +60,19 @@ export class OrdersPanelComponent implements OnInit {
       console.log('pomocy');
       this.getOrders();
     })
+  }
+
+  findByPhrase(phrase) {
+    this.orderService.getOrders().subscribe(response => {
+      this.items$ = response;
+      let array1: any;
+      let array2: any;
+      array1 = this.items$.filter(item => item.id.startsWith(phrase));
+      array2 = this.items$.filter(item => item.userId.startsWith(phrase));
+      this.items$ = array1;
+      this.items$ = this.items$.concat(array2);
+      console.log(this.items$);
+    });
   }
 
   getEmail() {

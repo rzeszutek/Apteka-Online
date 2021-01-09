@@ -21,9 +21,7 @@
     <div class="buttons">
       <p class="mb-2 text-muted text-uppercase">Dodaj do koszyka</p>
       <div style="margin-top: 2%">
-        <button class="btn btn-outline-primary">-</button>
-        <output>{{count}}</output>
-        <button class="btn btn-outline-primary">+</button>
+        <button (click)="addEquipmentToCart({'id': id,'name': name,'price': price,'quantity': 1})" class="btn btn-outline-primary">Dodaj</button>
       </div>
     </div>
   </div>

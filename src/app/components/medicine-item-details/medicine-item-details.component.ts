@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from "../../services/data/data.service";
 import { ActivatedRoute } from "@angular/router";
+import {CartService} from "../../services/cart/cart.service";
 
 @Component({
   // tslint:disable-next-line:component-selector
@@ -21,7 +22,7 @@ export class MedicineItemDetailsComponent implements OnInit {
 
   public count: number = 0;
 
-  constructor(private dataService: DataService, private route: ActivatedRoute) { }
+  constructor(private dataService: DataService, public cartService: CartService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     let id: string;
@@ -50,5 +51,9 @@ export class MedicineItemDetailsComponent implements OnInit {
         this.reimbursed = "Nie";
       }
     });
+  }
+
+  addMedicineToCart(product) {
+    return this.cartService.addMedicineToCart(product);
   }
 }

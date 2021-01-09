@@ -28,7 +28,12 @@ export class MedicineComponent implements OnInit {
   findByPhrase(phrase) {
     this.dataService.getMedicines().subscribe(response => {
       this.items$ = response;
-      this.items$ = this.items$.filter(item => item.name.toLowerCase().startsWith(phrase));
+      let array1: any;
+      let array2: any;
+      array1 = this.items$.filter(item => item.name.startsWith(phrase));
+      array2 = this.items$.filter(item => item.name.toLowerCase().startsWith(phrase));
+      this.items$ = array1;
+      this.items$ = this.items$.concat(array2);
     });
   }
 }

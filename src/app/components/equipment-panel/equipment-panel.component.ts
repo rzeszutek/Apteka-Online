@@ -15,6 +15,7 @@ export class EquipmentPanelComponent implements OnInit {
   public items$: any;
   public password: '';
   public response;
+  public phrase: '';
 
   public credentials = {
     loginName: '',
@@ -57,6 +58,18 @@ export class EquipmentPanelComponent implements OnInit {
     return this.dataService.deleteEquipment(id).subscribe( () => {
       this.getAll();
     })
+  }
+
+  findByPhrase(phrase) {
+    this.dataService.getEquipment().subscribe(response => {
+      this.items$ = response;
+      let array1: any;
+      let array2: any;
+      array1 = this.items$.filter(item => item.name.startsWith(phrase));
+      array2 = this.items$.filter(item => item.name.toLowerCase().startsWith(phrase));
+      this.items$ = array1;
+      this.items$ = this.items$.concat(array2);
+    });
   }
 
   getEmail() {

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from "../../services/data/data.service";
 import {ActivatedRoute} from "@angular/router";
+import {CartService} from "../../services/cart/cart.service";
 
 @Component({
   selector: 'equipment-item-details',
@@ -18,7 +19,7 @@ export class EquipmentItemDetailsComponent implements OnInit {
 
   public count: number = 0;
 
-  constructor(private dataService: DataService, private route: ActivatedRoute) { }
+  constructor(private dataService: DataService, public cartService: CartService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     let id: string;
@@ -35,5 +36,9 @@ export class EquipmentItemDetailsComponent implements OnInit {
       this.description = res['description'];
       //console.log(res);
     });
+  }
+
+  addEquipmentToCart(product) {
+    return this.cartService.addEquipmentToCart(product);
   }
 }
