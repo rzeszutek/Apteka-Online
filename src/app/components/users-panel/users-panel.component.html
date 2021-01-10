@@ -1,0 +1,54 @@
+<div class="container">
+  <div>
+    <form class="form-inline">
+      <input [(ngModel)]="phrase" class="form-control mr-sm-2" name="search" type="search" placeholder="Wpisz email lub ID użytkownika" aria-label="Search">
+      <button (click)="findByPhrase(phrase)" class="btn btn-outline-primary my-2 my-sm-0" type="submit">Szukaj</button>
+    </form>
+  </div>
+  <mat-list>
+    <div *ngFor="let item of items$">
+      <mat-card>
+        <div class="order-id">
+          <mat-icon class="user" color="primary">account_circle</mat-icon>
+          <div class="icons-container">
+            <mat-icon *ngIf="item.active" class="verified">verified_user</mat-icon>
+            <mat-icon *ngIf="!item.active" class="verified" color="warn">unpublished</mat-icon>
+            <p class="badge badge-primary badge-pill" style="margin-left: 20px;">{{item.id}}</p>
+            <button (click)="openDialog(item.id)" mat-mini-fab color="warn" style="margin-left: 20px; outline: none;">
+              <mat-icon>close</mat-icon>
+            </button>
+          </div>
+        </div>
+        <hr class="solid">
+        <div>
+          <label>Email: <b>{{item.loginName}}</b></label>
+        </div>
+        <hr class="solid">
+        <div class="users-container">
+          <label>Imię: <b>{{item.name}}</b></label>
+          <label>Nazwisko: <b>{{item.surname}}</b></label>
+          <label>Rola: <b>{{item.role}}</b></label>
+        </div>
+        <div class="orders-container">
+          <mat-accordion>
+            <mat-expansion-panel (click)="getUserOrders(item.id)" (opened)="panelOpenState = true"
+                                 (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Zamówienia użytkownika
+                </mat-panel-title>
+                <mat-panel-description>
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <div class="orders-card" *ngFor="let item of userItems$">
+                <mat-card>
+                  <label>Id zamówienia: <b>{{item.id}}</b></label>
+                </mat-card>
+              </div>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+      </mat-card>
+    </div>
+  </mat-list>
+</div>

@@ -60,6 +60,13 @@ async function getByEmail(name) {
   throw applicationException.new(applicationException.NOT_FOUND, 'User not found');
 }
 
+async function query() {
+  const result = await UserModel.find({});
+  if (result) {
+    return mongoConverter(result);
+  }
+}
+
 async function get(id) {
   const result = await UserModel.findOne({ _id: id });
   if (result) {
@@ -79,6 +86,7 @@ async function sendEmail(email) {
 export default {
   createNewOrUpdate: createNewOrUpdate,
   getByEmail: getByEmail,
+  query: query,
   get: get,
   removeById: removeById,
   sendEmail: sendEmail,

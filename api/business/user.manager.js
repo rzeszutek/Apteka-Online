@@ -41,6 +41,13 @@ function create(context) {
     return await PasswordDAO.authorize(user.id, password);
   }
 
+  async function query() {
+    let result = UserDAO.query();
+    if (result) {
+      return result;
+    }
+  }
+
   function getToken(token) {
     return {token: token.value};
   }
@@ -114,6 +121,7 @@ function create(context) {
     authenticate: authenticate,
     checkPassword: checkPassword,
     getByEmail: getByEmail,
+    query: query,
     getUserByToken: getUserByToken,
     createNewOrUpdate: createNewOrUpdate,
     removeUserById: removeUserById,

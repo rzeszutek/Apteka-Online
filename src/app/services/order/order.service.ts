@@ -32,6 +32,10 @@ export class OrderService {
     return this.http.get(this.url + '/api/order');
   }
 
+  getUserOrders(userId) {
+    return this.http.get(this.url + '/api/orders/?userId=' + userId);
+  }
+
   deleteOrder(id) {
     return this.http.delete(this.url + '/api/order/delete/' + id, { responseType: 'text'});
   }

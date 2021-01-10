@@ -35,4 +35,37 @@ p {
   transform: translate(-50%, 0);
 }
 
+.form-container {
+  position: absolute;
+  display: inline-block;
+  left: 6%;
+  bottom: 23%;
+  width: 100px;
+  height: 100px;
+  outline: none;
+  animation-name: easein;
+  animation-duration: 3s;
+}
+
+@keyframes easein {
+  from {
+    bottom: 0;
+  }
+
+  to {
+    //margin-bottom: 0%;
+  }
+}
+
+.chat {
+  width: 70px;
+  height: 70px;
+  margin-top: 18%;
+}
+
+.close-button {
+  position: absolute;
+  margin-left: 50%;
+  z-index: 999;
+}
 

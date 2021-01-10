@@ -37,12 +37,13 @@ p {
 .prescription {
   display: flex;
   justify-content: center;
-  margin-top: 5%;
 }
 
 .labels {
+  position: absolute;
   display: grid;
   width: 30%;
+  margin-top: 8%;
 }
 
 .label {

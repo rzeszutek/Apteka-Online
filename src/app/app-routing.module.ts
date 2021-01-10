@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {Component, NgModule} from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {HomeComponent} from './components/home/home.component';
 import {LoginComponent} from './components/login/login.component';
@@ -26,6 +26,8 @@ import {UserSettingsComponent} from "./components/user-settings/user-settings.co
 import {BankTransferComponent} from "./components/bank-transfer/bank-transfer.component";
 import {PasswordResetComponent} from "./components/password-reset/password-reset.component";
 import {PasswordRestoreComponent} from "./components/password-restore/password-restore.component";
+import {UsersPanelComponent} from "./components/users-panel/users-panel.component";
+import {FormComponent} from "./components/form/form.component";
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -48,6 +50,7 @@ const routes: Routes = [
       { path: 'orders-panel', component: OrdersPanelComponent, outlet: 'orders-panel-outlet' },
       { path: 'medicines-panel', component: MedicinesPanelComponent, outlet: 'medicines-panel-outlet' },
       { path: 'equipment-panel', component: EquipmentPanelComponent, outlet: 'equipment-panel-outlet' },
+      { path: 'users-panel', component: UsersPanelComponent, outlet: 'users-panel-outlet' },
     ]},
   { path: 'update-medicine/:id', component: UpdateMedicineComponent },
   { path: 'update-equipment/:id', component: UpdateEquipmentComponent },
@@ -55,6 +58,7 @@ const routes: Routes = [
   { path: 'bank-transfer', component: BankTransferComponent },
   { path: 'password-reset/:token/:id', component: PasswordResetComponent },
   { path: 'password-restore', component: PasswordRestoreComponent },
+  { path: 'form', component: FormComponent }
 ];
 
 @NgModule({
