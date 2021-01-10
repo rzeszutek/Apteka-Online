@@ -17,6 +17,13 @@ function create(context) {
     }
   }
 
+  async function getUserOrders(userId) {
+    let result = await orderDAO.getUserOrders(userId);
+    if (result) {
+      return result;
+    }
+  }
+
   async function createNewOrUpdate(data) {
     let result = await orderDAO.createNewOrUpdate(data);
     if (result) {
@@ -31,6 +38,7 @@ function create(context) {
   return {
     query: query,
     get: get,
+    getUserOrders: getUserOrders,
     createNewOrUpdate: createNewOrUpdate,
     removeOrderById: removeOrderById
   };

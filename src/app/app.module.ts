@@ -51,9 +51,11 @@ import { UserSettingsComponent } from './components/user-settings/user-settings.
 import { ConfirmationDialogComponent } from './components/dialogs/confirmation-dialog/confirmation-dialog.component';
 import { MatRadioModule } from "@angular/material/radio";
 import { BankTransferComponent } from './components/bank-transfer/bank-transfer.component';
-import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { PasswordResetComponent } from './components/password-reset/password-reset.component';
 import { PasswordRestoreComponent } from './components/password-restore/password-restore.component';
+import { UsersPanelComponent } from './components/users-panel/users-panel.component';
+import { FormComponent } from './components/form/form.component';
 
 declare module "@angular/core" {
   interface ModuleWithProviders<T = any> {
@@ -93,7 +95,9 @@ declare module "@angular/core" {
     ConfirmationDialogComponent,
     BankTransferComponent,
     PasswordResetComponent,
-    PasswordRestoreComponent
+    PasswordRestoreComponent,
+    UsersPanelComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
@@ -114,7 +118,9 @@ declare module "@angular/core" {
     MatTooltipModule,
     MatExpansionModule,
     MatRadioModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    BrowserModule,
+    BrowserAnimationsModule
   ],
   entryComponents: [
     PasswordDialogComponent

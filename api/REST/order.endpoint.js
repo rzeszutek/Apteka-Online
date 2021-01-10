@@ -23,9 +23,19 @@ const orderEndpoint = (router) => {
     }
   })
 
-  router.get('/api/order/:id', async (request, response) => {
+  router.get('/api/order/get', async (request, response) => {
     try {
-      let result = await business(request).getOrderManager().get(request.params.id);
+      let result = await business(request).getOrderManager().get(request.query.id);
+      response.status(200).send(result);
+    }
+    catch (error) {
+      applicationException.errorHandler(error, response);
+    }
+  })
+
+  router.get('/api/orders', async (request, response) => {
+    try {
+      let result = await business(request).getOrderManager().getUserOrders(request.query.userId);
       response.status(200).send(result);
     }
     catch (error) {

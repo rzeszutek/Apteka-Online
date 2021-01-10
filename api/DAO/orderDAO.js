@@ -59,6 +59,14 @@ async function get(id) {
   throw applicationException.new(applicationException.NOT_FOUND, 'Order not found');
 }
 
+async function getUserOrders(userId) {
+  const result = await OrderModel.find({ userId: userId });
+  if (result) {
+    return mongoConverter(result);
+  }
+  throw applicationException.new(applicationException.NOT_FOUND, 'Order not found');
+}
+
 async function removeById(id) {
   return await OrderModel.findByIdAndRemove(id);
 }
@@ -67,6 +75,7 @@ export default {
   createNewOrUpdate: createNewOrUpdate,
   query: query,
   get: get,
+  getUserOrders: getUserOrders,
   removeById: removeById,
   model: OrderModel
 };

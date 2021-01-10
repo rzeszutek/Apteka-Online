@@ -28,6 +28,10 @@ export class AuthService {
     );
   }
 
+  getUsers() {
+    return this.http.get(this.url + '/api/users');
+  }
+
   passwordCheck(credentials) {
     return this.http.post(this.url + '/api/user/passwordCheck', credentials);
   }
@@ -46,6 +50,10 @@ export class AuthService {
 
   createOrUpdate(credentials) {
     return this.http.post(this.url + '/api/user/create', credentials);
+  }
+
+  deleteUser(id) {
+    return this.http.delete(this.url + '/api/user/delete/' + id, { responseType: 'text'});
   }
 
   getId(loginName) {

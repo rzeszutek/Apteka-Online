@@ -9,16 +9,20 @@
   </div>
 </div>
 <div class="prescription" *ngIf="loggedIn()">
+  <img src="https://f.hubspotusercontent10.net/hub/491011/hubfs/LS%20Central%20for%20Pharmacy/Pharmacy-background-2.jpg?length=2000&name=Pharmacy-background-2.jpg"
+       width=100%>
   <div class="labels">
     <div>
-      <h1 class="datah">Wprowadź dane</h1>
+      <h1 class="data">Wprowadź dane</h1>
     </div>
-    <label class="label" for="PESEL">PESEL</label>
-    <input [(ngModel)]="credentials.PESEL" name="PESEL" type="text" id="PESEL" placeholder="Wprowadź PESEL">
-    <label class="label" for="code">Kod</label>
-    <input [(ngModel)]="credentials.code" name="code" type="text" id="code" placeholder="Wprowadź kod">
-    <div class="submit-button">
-      <button (click)="getPrescription(credentials.PESEL, credentials.code)" type="submit" class="btn btn-primary">Dalej</button>
-    </div>
+    <mat-form-field>
+      <input matInput [(ngModel)]="credentials.PESEL" name="PESEL" type="text" id="PESEL" placeholder="Wprowadź PESEL">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [(ngModel)]="credentials.code" name="code" type="text" id="code" placeholder="Wprowadź kod">
+    </mat-form-field>
+      <div class="submit-button">
+        <button (click)="getPrescription(credentials.PESEL, credentials.code)" type="submit" class="btn btn-primary">Dalej</button>
+      </div>
   </div>
 </div>
