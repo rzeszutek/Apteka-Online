@@ -12,20 +12,20 @@
           <label>ID</label>
           <div class="icons-container">
             <p class="badge badge-primary badge-pill" style="margin-left: 20px;">{{item.id}}</p>
-            <button mat-mini-fab color="grey" style="margin-left: 20px; outline: none">
-              <mat-icon>build</mat-icon>
+            <button [routerLink]="['/order-details', item.id]" mat-mini-fab matTooltip="Szczegóły zamówienia" color="grey" style="margin-left: 20px; outline: none">
+              <mat-icon>description</mat-icon>
             </button>
-            <button (click)="openDialog(item.id)" mat-mini-fab color="warn" style="margin-left: 20px; outline: none;">
+            <button (click)="openDialog(item.id)" matTooltip="Usuń lek" mat-mini-fab color="warn" style="margin-left: 20px; outline: none;">
               <mat-icon>close</mat-icon>
             </button>
           </div>
         </div>
         <hr class="solid">
         <div class="order-container">
-          <label>ID Użytkownika: <b>{{item.userId}}</b></label>
+          <label>Email: <b>{{item.email}}</b></label>
         </div>
         <div>
-          <label>Cena: <b>{{item.price}} zł</b></label>
+          <label>Cena: <b>{{(item.price).toFixed(2)}} zł</b></label>
         </div>
       </mat-card>
     </div>

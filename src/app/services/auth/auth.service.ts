@@ -10,8 +10,7 @@ export class AuthService {
 
   private url = 'http://localhost:3000';
 
-  constructor(private http: HttpClient, public router: Router) {
-  }
+  constructor(private http: HttpClient, public router: Router) {}
 
   authenticate(credentials) {
     return this.http.post(this.url + '/api/user/auth', {

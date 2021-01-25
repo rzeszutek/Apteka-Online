@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import { CartService } from "../../services/cart/cart.service";
 import { OrderService } from "../../services/order/order.service";
 import { Router } from "@angular/router";
+import {AuthService} from "../../services/auth/auth.service";
 
 @Component({
   selector: 'order',
@@ -25,17 +26,19 @@ export class OrderComponent implements OnInit {
     shipment: '',
     price: '',
     payment: '',
-    address: ''
+    address: '',
+    email: ''
   }
 
   public showSpinner = false;
 
-  constructor(public cartService: CartService, public orderService: OrderService, public router: Router) { }
+  constructor(public cartService: CartService, public orderService: OrderService, public router: Router, public authService: AuthService) { }
 
   ngOnInit(): void {
     this.getArrays();
     this.count();
-    console.log(this.items$, this.medicines$, this.equipment$);
+    this.getEmail();
+    console.log(this.items$, this.medicines$, this.equipment$, this.credentials.email);
   }
 
   getArrays() {
@@ -147,5 +150,9 @@ export class OrderComponent implements OnInit {
 
   clearList() {
     return this.cartService.clearCarts();
+  }
+
+  getEmail() {
+    this.credentials.email = this.authService.getEmail();
   }
 }

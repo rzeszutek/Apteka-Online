@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from "../../services/data/data.service";
+import {ConfirmationDialogComponent} from "../dialogs/confirmation-dialog/confirmation-dialog.component";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'add-medicine',
@@ -11,7 +13,7 @@ export class AddMedicineComponent implements OnInit {
   public credentials = {
     name: '',
     price: '',
-    imageUrl: '',
+    imageURL: '',
     reimbursed: false,
     prescription: false,
     description: ''
@@ -28,14 +30,22 @@ export class AddMedicineComponent implements OnInit {
   ]
 
 
-  constructor(public dataService: DataService) { }
+  constructor(public dataService: DataService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
   createOrUpdateMedicine() {
-    return this.dataService.createOrUpdateMedicine(this.credentials).subscribe((result) => {
-      return result;
+    return this.dataService.createOrUpdateMedicine(this.credentials).subscribe(res => {
+      this.openDialog();
     })
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+    });
   }
 }

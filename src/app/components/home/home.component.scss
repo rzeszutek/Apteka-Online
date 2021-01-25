@@ -36,15 +36,16 @@ p {
 }
 
 .form-container {
-  position: absolute;
+  position: fixed;
   display: inline-block;
-  left: 6%;
-  bottom: 23%;
+  left: 70px;
+  bottom: 80px;
   width: 100px;
   height: 100px;
   outline: none;
   animation-name: easein;
   animation-duration: 3s;
+  z-index: 999;
 }
 
 @keyframes easein {

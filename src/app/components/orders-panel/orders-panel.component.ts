@@ -57,7 +57,6 @@ export class OrdersPanelComponent implements OnInit {
 
   deleteOrder(id) {
     return this.orderService.deleteOrder(id).subscribe( () => {
-      console.log('pomocy');
       this.getOrders();
     })
   }

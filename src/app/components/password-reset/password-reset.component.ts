@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import { AuthService } from "../../services/auth/auth.service";
 
 @Component({
@@ -19,7 +19,7 @@ export class PasswordResetComponent implements OnInit {
     password: ''
   }
 
-  constructor(public route: ActivatedRoute, public authService: AuthService) {}
+  constructor(public route: ActivatedRoute, public authService: AuthService, public router: Router) {}
 
   ngOnInit(): void {
     this.route.paramMap
@@ -33,12 +33,12 @@ export class PasswordResetComponent implements OnInit {
   resetPassword(credentials, token) {
     if (this.credentials.password == this.passwordRepeated) {
       this.authService.passwordReset(credentials, token);
+      this.router.navigate(['/login']);
     }
   }
 
   updateUser(user) {
     this.authService.createOrUpdate(user).subscribe(() => {
-      console.log('Updated.');
     });
   }
 }

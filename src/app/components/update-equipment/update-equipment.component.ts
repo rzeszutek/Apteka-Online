@@ -15,7 +15,7 @@ export class UpdateEquipmentComponent implements OnInit {
   public items$: any;
   public name: string;
   public price: string;
-  public imageUrl: string;
+  public imageURL: string;
   public description: string;
   public id: string;
 
@@ -32,7 +32,7 @@ export class UpdateEquipmentComponent implements OnInit {
 
     this.dataService.getEquipmentById(id).subscribe(res => {
       this.items$ = res;
-      this.imageUrl = res['imageUrl'];
+      this.imageURL = res['imageURL'];
     })
   }
 

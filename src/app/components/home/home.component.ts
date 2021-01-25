@@ -17,10 +17,14 @@ import {
 
 export class HomeComponent implements OnInit {
 
-  public show = false;
+  public show = true;
 
   constructor() {}
 
   ngOnInit(): void {
+  }
+
+  closeBubble() {
+    this.show = false;
   }
 }

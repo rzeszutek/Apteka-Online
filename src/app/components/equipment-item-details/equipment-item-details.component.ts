@@ -13,7 +13,7 @@ export class EquipmentItemDetailsComponent implements OnInit {
   public items$: any;
   public name: string;
   public price: string;
-  public imageUrl: string;
+  public imageURL: string;
   public description: string;
   public id: string;
 
@@ -32,7 +32,7 @@ export class EquipmentItemDetailsComponent implements OnInit {
       this.id = res['id']
       this.name = res['name'];
       this.price = res['price'];
-      this.imageUrl = res['imageUrl'];
+      this.imageURL = res['imageURL'];
       this.description = res['description'];
       //console.log(res);
     });
