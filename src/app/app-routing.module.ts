@@ -28,6 +28,7 @@ import {PasswordResetComponent} from "./components/password-reset/password-reset
 import {PasswordRestoreComponent} from "./components/password-restore/password-restore.component";
 import {UsersPanelComponent} from "./components/users-panel/users-panel.component";
 import {FormComponent} from "./components/form/form.component";
+import {OrderDetailsComponent} from "./components/order-details/order-details.component";
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -43,6 +44,7 @@ const routes: Routes = [
   { path: 'prescription', component: PrescriptionComponent },
   { path: 'order', component: OrderComponent },
   { path: 'order-item', component: OrderItemComponent },
+  { path: 'order-details/:id', component: OrderDetailsComponent },
   { path: 'footer', component: FooterComponent },
   { path: 'control-panel', component: ControlPanelComponent, children: [
       { path: 'add-medicine', component: AddMedicineComponent, outlet: 'medicine-outlet' },

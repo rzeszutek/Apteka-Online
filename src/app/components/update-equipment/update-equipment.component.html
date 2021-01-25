@@ -1,7 +1,7 @@
 <div class="container">
   <div class="item">
     <div class="equipment">
-      <img [src]="imageUrl">
+      <img [src]="imageURL">
     </div>
     <mat-accordion>
       <mat-expansion-panel hideToggle>
@@ -10,7 +10,7 @@
             Nazwa
           </mat-panel-title>
           <mat-panel-description>
-
+            {{items$.name}}
           </mat-panel-description>
         </mat-expansion-panel-header>
         <form>
@@ -29,8 +29,8 @@
           <mat-panel-title>
             Cena
           </mat-panel-title>
-          <mat-panel-description>
-
+          <mat-panel-description style="margin-right: 10%;">
+            {{items$.price}} zł
           </mat-panel-description>
         </mat-expansion-panel-header>
         <form id="price">
@@ -53,11 +53,12 @@
 
           </mat-panel-description>
         </mat-expansion-panel-header>
+        <p>{{items$.imageURL}}</p>
         <mat-form-field class="example-full-width">
           <mat-label>Wprowadź adres URL</mat-label>
-          <input matInput [(ngModel)]="imageUrl">
+          <input matInput [(ngModel)]="imageURL">
         </mat-form-field>
-        <button (click)="updateEquipment({id: items$.id, imageUrl: imageUrl})" class="btn btn-primary btn-sm">Aktualizuj</button>
+        <button (click)="updateEquipment({id: items$.id, imageURL: imageURL})" class="btn btn-primary btn-sm">Aktualizuj</button>
       </mat-expansion-panel>
       <mat-expansion-panel (opened)="panelOpenState = true"
                            (closed)="panelOpenState = false">
@@ -71,6 +72,7 @@
 
           </mat-panel-description>
         </mat-expansion-panel-header>
+        <p>{{items$.description}}</p>
         <mat-form-field class="example-full-width">
           <mat-label>Wprowadź nowy opis</mat-label>
           <input matInput [(ngModel)]="description">

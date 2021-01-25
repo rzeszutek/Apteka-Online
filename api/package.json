@@ -25,7 +25,9 @@
     "mongoose-unique-validator": "^2.0.3",
     "nodemailer": "^6.4.17",
     "nodemon": "^2.0.4",
-    "sha1": "^1.1.1"
+    "sha1": "^1.1.1",
+    "swagger-jsdoc": "^6.0.1",
+    "swagger-ui-express": "^4.1.6"
   },
   "devDependencies": {
     "@angular/cli": "^10.0.8",

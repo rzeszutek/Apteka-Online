@@ -2,6 +2,7 @@
 
 import business from '../business/business.container';
 import applicationException from '../service/applicationException';
+import auth from "../middleware/auth";
 
 const medicineEndpoint = (router) => {
   router.get('/api/medicine', async (request, response) => {

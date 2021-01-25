@@ -14,7 +14,7 @@ export class MedicineItemDetailsComponent implements OnInit {
   public items$: any;
   public name: string;
   public price: string;
-  public imageUrl: string;
+  public imageURL: string;
   public reimbursed: string;
   public prescription: string;
   public description: string;
@@ -35,7 +35,7 @@ export class MedicineItemDetailsComponent implements OnInit {
       this.id = res['id']
       this.name = res['name'];
       this.price = res['price'];
-      this.imageUrl = res['imageUrl'];
+      this.imageURL = res['imageURL'];
       this.reimbursed = res['reimbursed'];
       this.prescription = res['prescription'];
       this.description = res['description'];

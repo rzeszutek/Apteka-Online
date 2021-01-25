@@ -28,6 +28,10 @@ export class OrderService {
     return localStorage.getItem('token');
   }
 
+  getOrder(id) {
+    return this.http.get(this.url + '/api/order/' + id);
+  }
+
   getOrders() {
     return this.http.get(this.url + '/api/order');
   }

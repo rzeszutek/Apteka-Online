@@ -14,7 +14,7 @@
             <mat-icon *ngIf="item.active" class="verified">verified_user</mat-icon>
             <mat-icon *ngIf="!item.active" class="verified" color="warn">unpublished</mat-icon>
             <p class="badge badge-primary badge-pill" style="margin-left: 20px;">{{item.id}}</p>
-            <button (click)="openDialog(item.id)" mat-mini-fab color="warn" style="margin-left: 20px; outline: none;">
+            <button (click)="openDialog(item.id)" matTooltip="Usuń użytkownika" mat-mini-fab color="warn" style="margin-left: 20px; outline: none;">
               <mat-icon>close</mat-icon>
             </button>
           </div>
@@ -41,8 +41,9 @@
                 </mat-panel-description>
               </mat-expansion-panel-header>
               <div class="orders-card" *ngFor="let item of userItems$">
-                <mat-card>
-                  <label>Id zamówienia: <b>{{item.id}}</b></label>
+                <mat-card style="display: flex; justify-content: space-between;">
+                  <label>ID zamówienia: <b>{{item.id}}</b></label>
+                  <button [routerLink]="['/order-details', item.id]" class="btn btn-primary">Więcej</button>
                 </mat-card>
               </div>
             </mat-expansion-panel>

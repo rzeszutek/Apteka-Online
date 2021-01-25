@@ -1,0 +1,104 @@
+<div class="container">
+  <mat-card class="card">
+    <div class="center">
+      <mat-card-title>{{id}}</mat-card-title>
+      <mat-divider></mat-divider>
+    </div>
+    <div>
+      <mat-card-content class="card-content">
+        <div class="content">
+          <p><b>Email</b></p>
+          <p>{{email}}</p>
+        </div>
+        <mat-divider></mat-divider>
+        <div *ngIf="getMedicineLength()">
+          <div class="expansion">
+            <mat-accordion>
+              <mat-expansion-panel (opened)="panelOpenState = true"
+                                   (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Leki
+                  </mat-panel-title>
+                  <mat-panel-description>
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <div class="orders-card" *ngFor="let item of medicines">
+                  <mat-card>
+                    <div class="content">
+                      <label><b>ID leku</b></label>
+                      <p>{{item.id}}</p>
+                    </div>
+                    <div class="content">
+                      <label><b>Nazwa</b></label>
+                      <p>{{item.name}}</p>
+                    </div>
+                    <div class="content">
+                      <label><b>Ilość</b></label>
+                      <p>{{item.quantity}}</p>
+                    </div>
+                    <mat-divider></mat-divider>
+                  </mat-card>
+                </div>
+              </mat-expansion-panel>
+            </mat-accordion>
+          </div>
+        </div>
+        <div *ngIf="getEquipmentLength()">
+          <div class="expansion">
+            <mat-accordion>
+              <mat-expansion-panel (opened)="panelOpenState = true"
+                                   (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Sprzęt
+                  </mat-panel-title>
+                  <mat-panel-description>
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <div class="orders-card" *ngFor="let item of equipment">
+                  <mat-card>
+                    <div class="content">
+                      <label><b>ID sprzętu</b></label>
+                      <p>{{item.id}}</p>
+                    </div>
+                    <div class="content">
+                      <label><b>Nazwa</b></label>
+                      <p>{{item.name}}</p>
+                    </div>
+                    <div class="content">
+                      <label><b>Ilość</b></label>
+                      <p>{{item.quantity}}</p>
+                    </div>
+                    <mat-divider></mat-divider>
+                  </mat-card>
+                </div>
+              </mat-expansion-panel>
+            </mat-accordion>
+          </div>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="content">
+          <p><b>Odbiór osobisty</b></p>
+          <p *ngIf="!shipment">Tak</p>
+          <p *ngIf="shipment">Nie</p>
+        </div>
+        <mat-divider></mat-divider>
+        <div *ngIf="address" class="content">
+          <p><b>Adres</b></p>
+          <p>{{address}}</p>
+        </div>
+        <mat-divider></mat-divider>
+        <div *ngIf="payment" class="content">
+          <p><b>Płatność</b></p>
+          <p>{{payment}}</p>
+        </div>
+        <mat-divider></mat-divider>
+        <div *ngIf="price" class="content">
+          <p><b>Cena</b></p>
+          <p>{{price.toFixed(2)}} zł</p>
+        </div>
+      </mat-card-content>
+    </div>
+  </mat-card>
+</div>

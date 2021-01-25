@@ -2,11 +2,15 @@
   display: list-item;
   list-style: none;
   margin-top: 5%;
-  height: 850px;
+  //height: 850px;
+  margin-bottom: 5%;
 }
 
 mat-expansion-panel {
   margin-top: 2%;
+}
+
+mat-panel-description {
 }
 
 .example-form {

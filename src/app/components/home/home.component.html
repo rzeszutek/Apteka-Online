@@ -1,8 +1,8 @@
 <div class="home">
   <img src="https://3.bp.blogspot.com/-B5ELAwZBS2I/XNTwclI8r6I/AAAAAAAANNM/u-hoGYH8I3w4h6hOcKCXMTp3UU3E2anxgCLcBGAs/s1600/background%2Bpowerpoint%2Bmedical%2Bstethoscope.JPG"
        width=100%>
-  <div class="form-container">
-    <button class="close-button" mat-mini-fab color="warn" style="outline: none">
+  <div *ngIf="show" class="form-container">
+    <button (click)="closeBubble()" class="close-button" mat-mini-fab color="warn" style="outline: none">
       <mat-icon>close</mat-icon>
     </button>
     <button mat-fab class="chat" color="primary" style="outline: none">

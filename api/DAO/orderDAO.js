@@ -17,6 +17,7 @@ const orderSchema = new mongoose.Schema({
   payment: {type: String},
   address: {type: String},
   date: {type: Date},
+  email: {type: String}
 }, {
   collection: 'orders'
 });

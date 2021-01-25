@@ -14,7 +14,7 @@ export class UpdateMedicineComponent implements OnInit {
   public items$: any;
   public name: string;
   public price: string;
-  public imageUrl: string;
+  public imageURL: string;
   public reimbursed: string;
   public prescription: string;
   public description: string;
@@ -44,7 +44,7 @@ export class UpdateMedicineComponent implements OnInit {
 
     this.dataService.getMedicineById(id).subscribe(res => {
       this.items$ = res;
-      this.imageUrl = res['imageUrl'];
+      this.imageURL = res['imageURL'];
     })
   }
 

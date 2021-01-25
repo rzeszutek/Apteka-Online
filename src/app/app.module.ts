@@ -21,7 +21,6 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { TruncatePipe } from './pipes/truncate.pipe';
 import { AuthService } from "./services/auth/auth.service";
 import { AuthInterceptor } from "./services/auth/auth.interceptor";
-import { RouterModule } from "@angular/router";
 import { AuthGuard } from "./services/auth/auth.guard";
 import { FormsModule } from "@angular/forms";
 import { EquipmentItemComponent } from './components/equipment-item/equipment-item.component';
@@ -55,7 +54,8 @@ import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { PasswordResetComponent } from './components/password-reset/password-reset.component';
 import { PasswordRestoreComponent } from './components/password-restore/password-restore.component';
 import { UsersPanelComponent } from './components/users-panel/users-panel.component';
-import { FormComponent } from './components/form/form.component';
+import { EmailSendDialogComponent } from './components/dialogs/email-send-dialog/email-send-dialog.component';
+import { OrderDetailsComponent } from './components/order-details/order-details.component';
 
 declare module "@angular/core" {
   interface ModuleWithProviders<T = any> {
@@ -97,7 +97,8 @@ declare module "@angular/core" {
     PasswordResetComponent,
     PasswordRestoreComponent,
     UsersPanelComponent,
-    FormComponent
+    EmailSendDialogComponent,
+    OrderDetailsComponent
   ],
   imports: [
     BrowserModule,
