@@ -1,0 +1,22 @@
+<div class="container">
+  <form action="post" autocomplete="off" method="POST">
+    <div>
+      <h1>Uzupełnij dane</h1>
+      <label for="name">Email</label>
+      <input [(ngModel)]="credentials.loginName" name="loginName" type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Wprowadź email">
+      <div class="reimbursed-container">
+        <label for="subject">Temat</label>
+        <mat-form-field>
+          <mat-select [(ngModel)]="credentials.subject" name="subject" id="subject">
+            <mat-option *ngFor="let option of subjectOptions" [value]="option.value">
+              {{option.value}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <label for="description">Opis problemu</label>
+      <input [(ngModel)]="credentials.description" name="description" type="text" name="description" class="form-control" style="height: 200px;" id="description" aria-describedby="emailHelp" placeholder="Wprowadź opis">
+      <button (click)="createForm()" type="submit" class="btn btn-primary">Wyślij formularz</button>
+    </div>
+  </form>
+</div>

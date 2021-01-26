@@ -29,6 +29,9 @@ import {PasswordRestoreComponent} from "./components/password-restore/password-r
 import {UsersPanelComponent} from "./components/users-panel/users-panel.component";
 import {FormComponent} from "./components/form/form.component";
 import {OrderDetailsComponent} from "./components/order-details/order-details.component";
+import {FormsPageComponent} from "./components/forms-page/forms-page.component";
+import {FormsPanelComponent} from "./components/forms-panel/forms-panel.component";
+import {FormsDetailsComponent} from "./components/forms-details/forms-details.component";
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -53,6 +56,7 @@ const routes: Routes = [
       { path: 'medicines-panel', component: MedicinesPanelComponent, outlet: 'medicines-panel-outlet' },
       { path: 'equipment-panel', component: EquipmentPanelComponent, outlet: 'equipment-panel-outlet' },
       { path: 'users-panel', component: UsersPanelComponent, outlet: 'users-panel-outlet' },
+      { path: 'forms-panel', component: FormsPanelComponent, outlet: 'forms-panel-outlet' },
     ]},
   { path: 'update-medicine/:id', component: UpdateMedicineComponent },
   { path: 'update-equipment/:id', component: UpdateEquipmentComponent },
@@ -60,7 +64,9 @@ const routes: Routes = [
   { path: 'bank-transfer', component: BankTransferComponent },
   { path: 'password-reset/:token/:id', component: PasswordResetComponent },
   { path: 'password-restore', component: PasswordRestoreComponent },
-  { path: 'form', component: FormComponent }
+  { path: 'form', component: FormComponent },
+  { path: 'forms-page', component: FormsPageComponent },
+  { path: 'forms-details/:id', component: FormsDetailsComponent },
 ];
 
 @NgModule({

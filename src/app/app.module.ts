@@ -56,6 +56,10 @@ import { PasswordRestoreComponent } from './components/password-restore/password
 import { UsersPanelComponent } from './components/users-panel/users-panel.component';
 import { EmailSendDialogComponent } from './components/dialogs/email-send-dialog/email-send-dialog.component';
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
+import { FormsPageComponent } from './components/forms-page/forms-page.component';
+import { FormSendDialogComponent } from './components/dialogs/form-send-dialog/form-send-dialog.component';
+import { FormsPanelComponent } from './components/forms-panel/forms-panel.component';
+import { FormsDetailsComponent } from './components/forms-details/forms-details.component';
 
 declare module "@angular/core" {
   interface ModuleWithProviders<T = any> {
@@ -98,7 +102,11 @@ declare module "@angular/core" {
     PasswordRestoreComponent,
     UsersPanelComponent,
     EmailSendDialogComponent,
-    OrderDetailsComponent
+    OrderDetailsComponent,
+    FormsPageComponent,
+    FormSendDialogComponent,
+    FormsPanelComponent,
+    FormsDetailsComponent
   ],
   imports: [
     BrowserModule,
