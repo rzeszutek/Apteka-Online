@@ -43,4 +43,16 @@ export class DataService {
   deleteEquipment(id) {
     return this.http.delete(this.url + '/api/equipment/delete/' + id, { responseType: 'text'});
   }
+
+  getForms() {
+    return this.http.get(this.url + '/api/form');
+  }
+
+  getForm(id) {
+    return this.http.get(this.url + '/api/form/' + id);
+  }
+
+  createForm(credentials) {
+    return this.http.post(this.url + '/api/form/create', credentials);
+  }
 }

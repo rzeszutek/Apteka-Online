@@ -5,6 +5,7 @@ import userManager from './user.manager'
 import equipmentManager from './equipment.manager';
 import orderManager from './order.manager';
 import prescriptionManager from './prescription.manager';
+import formManager from './form.manager';
 
 function getContext(request) {
   return { user: request && request.user };
@@ -23,7 +24,8 @@ const createBusinessContainer = (request, config) => {
     getUserManager: getter(userManager, request),
     getEquipmentManager: getter(equipmentManager, request),
     getOrderManager: getter(orderManager, request),
-    getPrescriptionManager: getter(prescriptionManager, request)
+    getPrescriptionManager: getter(prescriptionManager, request),
+    getFormManager: getter(formManager, request)
   };
 };
 

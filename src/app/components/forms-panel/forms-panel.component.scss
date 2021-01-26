@@ -1,0 +1,36 @@
+.container {
+  height: 900px;
+}
+
+mat-card {
+  width: 80%;
+  margin-top: 5%;
+}
+
+.order-id {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icons-container {
+  display: flow-root;
+}
+
+.form-inline {
+  padding: 5%;
+  display: flex;
+  justify-content: center;
+  width: 80%;
+}
+
+.form-inline .form-control {
+  width: 70%;
+}
+
+.form-inline .btn {
+  width: 9%;
+}
+
+.order-container {
+  position: relative;
+}

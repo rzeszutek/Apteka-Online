@@ -1,0 +1,31 @@
+<div class="container">
+  <div>
+    <form class="form-inline">
+      <input  class="form-control mr-sm-2" name="search" type="search" placeholder="Wpisz ID formularza" aria-label="Search">
+      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Szukaj</button>
+    </form>
+  </div>
+  <mat-list>
+    <div *ngFor="let item of items$">
+      <mat-card>
+        <div class="order-id">
+          <label>ID</label>
+          <div class="icons-container">
+            <p class="badge badge-primary badge-pill" style="margin-left: 20px;">{{item.id}}</p>
+            <button [routerLink]="['/forms-details', item.id]" mat-mini-fab matTooltip="Szczegóły formularza" color="grey" style="margin-left: 20px; outline: none">
+              <mat-icon>description</mat-icon>
+            </button>
+            <button (click)="openDialog(item.id)" matTooltip="Usuń formularz" mat-mini-fab color="warn" style="margin-left: 20px; outline: none;">
+              <mat-icon>close</mat-icon>
+            </button>
+          </div>
+        </div>
+        <hr class="solid">
+        <div class="order-container">
+          <label>Email: <b>{{item.loginName}}</b></label>
+          <label style="margin-left: 15%;">Temat: <b>{{item.subject}}</b></label>
+        </div>
+      </mat-card>
+    </div>
+  </mat-list>
+</div>
