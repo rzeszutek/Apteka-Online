@@ -81,18 +81,17 @@ async function query() {
   }
 }
 
-async function get(id) {
-  const result = await FormModel.findOne({ _id: id });
-  if (result) {
-    return mongoConverter(result);
-  }
-  throw applicationException.new(applicationException.NOT_FOUND, 'User not found');
-}
+// async function get(id) {
+//   const result = await FormModel.findOne({ _id: id });
+//   if (result) {
+//     return mongoConverter(result);
+//   }
+//   throw applicationException.new(applicationException.NOT_FOUND, 'User not found');
+// }
 
 async function removeById(id) {
   return await FormModel.findByIdAndRemove(id);
 }
-
 
 export default {
   createNewOrUpdate: createNewOrUpdate,

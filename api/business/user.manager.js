@@ -6,6 +6,7 @@ import UserDAO from '../DAO/userDAO';
 import applicationException from '../service/applicationException';
 import bcrypt from 'bcrypt';
 import medicineDAO from "../DAO/medicineDAO";
+import config from "../config";
 import nodemailer from 'nodemailer';
 
 function create(context) {
@@ -97,7 +98,7 @@ function create(context) {
       service: 'gmail',
       auth: {
         user: 'noreply.aptekaonline.rr@gmail.com',
-        pass: 'AptekaOnline#321'
+        pass: config.GmailPassword
       }
     });
 

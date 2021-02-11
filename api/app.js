@@ -1,4 +1,4 @@
-'use strict';
+//'use strict';
 
 import express from 'express';
 import mongoose from 'mongoose';
@@ -38,6 +38,8 @@ app.get('/*', function (req, res) {
 app.listen(config.port, () => {
   console.info(`Server is running at ${config.port}`)
 });
+
+module.exports = app;
 
 // // const express = require('express');
 // // const mongoose = require('mongoose');
