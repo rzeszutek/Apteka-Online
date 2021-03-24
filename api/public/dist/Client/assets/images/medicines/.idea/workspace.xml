@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5b7fe50f-28fc-4ca0-bc30-f4359a852ec9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../../../../DAO/equipmentDAO.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../DAO/formDAO.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../DAO/medicineDAO.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../DAO/orderDAO.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../DAO/passwordDAO.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../DAO/prescriptionDAO.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../DAO/tokenDAO.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../DAO/userDAO.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../REST/equipment.endpoint.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../REST/form.endpoint.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../REST/medicines.endpoints.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../REST/order.endpoint.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../REST/prescriptions.endpoint.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../REST/user.endpoint.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../business/business.container.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../business/equipment.manager.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../business/form.manager.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../business/medicine.manager.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../business/order.manager.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../business/prescription.manager.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../business/user.manager.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../middleware/admin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../middleware/auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../equipment/analizator.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../equipment/apteczka.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../equipment/higrometr55.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../equipment/inhalator.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../equipment/maseczka.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../equipment/nisseids11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../equipment/pulsoksymetr.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../equipment/samochodowa.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../equipment/v100xxl.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/acard.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ascorvita.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cardiomin.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clotrimazolum.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/femibion.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ibuprom.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/magne.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mucosolvan.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nurofen.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/paracetamol.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rostil.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rutinoscorbin.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../service/applicationException.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../service/momentWrapper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../service/mongoConverter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../swagger.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../../../test/unit/get.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../../.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../../.babelrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../../.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../../REST/endpoints.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../../REST/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../../REST/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../../app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../../app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../../config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../../config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../../index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../../index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../../models/elements.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../../package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../../package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../../package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../../main.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../styles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../styles.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../../styles.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../vendor.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../../vendor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../vendor.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/../../../vendor.js.map" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../../.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="D:\Programy\IntelliJ\IntelliJ IDEA 2019.3.2\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1otex3l46lpHC4mC1h269ox6FcB" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../../../../../../../Projekty/react-web" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5b7fe50f-28fc-4ca0-bc30-f4359a852ec9" name="Default Changelist" comment="" />
+      <created>1614110556642</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1614110556642</updated>
+      <workItem from="1614110557729" duration="40000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1614110596719">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1614110596719" />
+  </component>
+</project>

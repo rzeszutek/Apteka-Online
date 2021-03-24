@@ -46,7 +46,7 @@ export class UsersPanelComponent implements OnInit {
       if(this.password) {
         this.credentials.loginName = this.getEmail();
         this.credentials.password = this.password;
-        this.authService.passwordCheck(this.credentials).subscribe( response => {
+        this.authService.passwordCheck(this.credentials).subscribe(response => {
           this.response = response;
           console.log(this.response);
           if(this.response) {
