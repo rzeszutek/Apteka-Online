@@ -3,7 +3,8 @@
   Serwer:
 - Za pomocą terminala/konsoli przechodzimy do directory "api"
 - Używamy komendy: "node index.js"
-
+___________________________________________________________________________________________________________________________________________________________________________________
+ 
   Klient:
 - Za pomocą terminala/konsoli przechodzimy do directory "src"
 - Używamy komendy: "ng serve"
