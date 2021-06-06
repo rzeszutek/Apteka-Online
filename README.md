@@ -1,5 +1,7 @@
 # Uruchamianie projektu:
 
+W folderze projektu używamy komendy: "npm install".
+___________________________________________________________________________________________________________________________________________________________________________________
   Serwer:
 - Za pomocą terminala/konsoli przechodzimy do directory "api"
 - Używamy komendy: "node index.js"
