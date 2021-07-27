@@ -1,6 +1,6 @@
 const config = {
-  port: process.env.PORT || 3000,
-  databaseUrl: process.env.MONGODB_URI || 'mongodb+srv://admin:mongodb@meanproject.be50c.mongodb.net/meanproject?retryWrites=true&w=majority',
-  JwtSecret: process.env.JWT_SECRET || 'secret'
+  port: process.env.PORT,
+  databaseUrl: process.env.MONGODB_URI,
+  JwtSecret: process.env.JWT_SECRET
 }
 export default config;
